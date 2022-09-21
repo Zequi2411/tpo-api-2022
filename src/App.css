@@ -37,7 +37,13 @@
   }
 }
 
+
+.FotoProfesorCont{
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+}
+
 .FotoProfesor{
-  width: 1%;
-  height: 50%;
+  width: 100%;
 }
