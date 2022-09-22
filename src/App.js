@@ -1,9 +1,9 @@
 import React from 'react';
-import MiNavBar from './components/MiNavBar';
+//import MiNavBar from './components/MiNavBar';
 import './App.css';
-import Fotoprofesor from './components/FotoProfesor';
+//import Fotoprofesor from './components/FotoProfesor';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import NavBar from './components/NavBar';
+import NavBar from './components/NavBar/NavBar'
 import Inicio from './components/paginas/Inicio';
 
 function App() {
@@ -16,8 +16,8 @@ function App() {
         </Route>
       </Routes>
     </BrowserRouter>
-    <MiNavBar></MiNavBar>
-    <Fotoprofesor></Fotoprofesor>
+    {/* <MiNavBar></MiNavBar>
+    <Fotoprofesor></Fotoprofesor> */}
     </>
   );
 }
