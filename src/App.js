@@ -19,10 +19,12 @@ function App() {
           <Route index element={<Inicio />} />
           <Route path="cursos" element={<Cursos />} />
           <Route path="nosotros" element={<Nosotros />} />
+          <Route path="login" element={<Login />} />
           <Route path="signup" element={<SignUp />} />
+
         </Route>
       </Routes>
-      <Footer></Footer>
+      <Footer/>
     </BrowserRouter>
 
     
