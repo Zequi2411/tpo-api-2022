@@ -3,16 +3,17 @@ import './Footer.css';
 import '../../App.css';
 import { Button } from '../Button/Button';
 import { Link } from 'react-router-dom';
+import SchoolIcon from '@mui/icons-material/School';
 
 function Footer() {
   return (
     <div className='footer-container'>
       <section className='footer-subscription'>
         <p className='footer-subscription-heading'>
-          Join the Adventure newsletter to receive our best vacation deals
+          Recibi nuestras ultimas novedades en tu correo
         </p>
         <p className='footer-subscription-text'>
-          You can unsubscribe at any time.
+          Podes cancelar la suscripción en cualquier momento.
         </p>
         <div className='input-areas'>
           <form>
@@ -20,9 +21,9 @@ function Footer() {
               className='footer-input'
               name='email'
               type='email'
-              placeholder='Your Email'
+              placeholder='Tu Email'
             />
-            <Button buttonStyle='btn--outline'>Subscribe</Button>
+            <Button buttonStyle='btn--outline'>Subscribite</Button>
           </form>
         </div>
       </section>
@@ -65,11 +66,11 @@ function Footer() {
         <div class='social-media-wrap'>
           <div class='footer-logo'>
             <Link to='/' className='social-logo'>
-              TRVL
-              <i class='fab fa-typo3' />
+              Tusclases.com
+              <SchoolIcon></SchoolIcon>
             </Link>
           </div>
-          <small class='website-rights'>TRVL © 2020</small>
+          <small class='website-rights'>Tusclases.com © 2022</small>
           <div class='social-icons'>
             <Link
               class='social-icon-link facebook'
