@@ -8,6 +8,7 @@ import Inicio from './components/paginas/Inicio';
 import Cursos from './components/paginas/Cursos';
 import Nosotros from './components/paginas/Nosotros';
 import SignUp from './components/paginas/SignUp';
+import Login from './components/paginas/Login';
 import Footer from './components/Footer/Footer';
 
 function App() {
@@ -20,7 +21,7 @@ function App() {
           <Route path="cursos" element={<Cursos />} />
           <Route path="nosotros" element={<Nosotros />} />
           <Route path="login" element={<Login />} />
-          <Route path="signup" element={<SignUp />} />
+          <Route path="singup" element={<SignUp />} />
 
         </Route>
       </Routes>
