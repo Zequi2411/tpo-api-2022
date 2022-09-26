@@ -10,6 +10,7 @@ import Nosotros from './components/paginas/Nosotros';
 import SignUp from './components/paginas/SignUp';
 import Login from './components/paginas/Login';
 import Footer from './components/Footer/Footer';
+import ItemListConteiner from './components/paginas/ItemListContainer';
 
 function App() {
   return (
@@ -18,7 +19,7 @@ function App() {
       <Routes>
         <Route path="/" element={<NavBar />}>
           <Route index element={<Inicio />} />
-          <Route path="cursos" element={<Cursos />} />
+          <Route path="cursos" element={<ItemListConteiner greeting='Hola, Bienveni@s!' />} />
           <Route path="nosotros" element={<Nosotros />} />
           <Route path="login" element={<Login />} />
           <Route path="singup" element={<SignUp />} />

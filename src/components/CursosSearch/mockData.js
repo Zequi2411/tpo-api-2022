@@ -1,35 +1,48 @@
 const data = [
     {
         id: "1",
-        title: "Monitor",
+        title: "Inglés americano",
+        materia: "Inglés",
+        ubicacion: "Buenos Aires",
+        tipo: "Grupal",
+        frecuencia: "Semanal",
         price: "$20000",
-        image: "https://www.pnguniverse.com/wp-content/uploads/2021/06/Monitor-encendido-cc9a67fd.png",
+        image: "/images/avatar.png",
         description: "Un monitor de alta calidad para gaming, no hace mal a la vista y da mas aim",
-        stock:"5"
     },
     {
         id: "2",
-        title: "Mouse",
+        title: "Analista de sistema de computación",
+        materia: "Informática",
+        ubicacion: "Buenos Aires",
+        tipo: "Grupal",
+        frecuencia: "Mensual",
         price: "$5000",
-        image: "https://jctecnologia.com.ar/hpjct/wp-content/uploads/2021/05/g502-hero.png",
+        image: "/images/avatar.png",
         description: "Un mouse con apuntado asistido para juegos shooters",
-        stock:"10"
-    
     },
     {
         id: "3",
-        title: "Teclado",
+        title: "Clases de violín, todos los niveles y edades",
+        materia: "Música",
+        ubicacion: "Córdoba",
+        tipo: "Individual",
+        frecuencia: "Semanal",
         price: "$7000",
-        image: "https://resource.logitechg.com/d_transparent.gif/content/dam/gaming/en/products/lol-pro-x-keyboard/gallery/league-of-legends-pro-x-gaming-keyboard-gallery-1.png",
+        image: "/images/avatar.png",
         description: "Teclado mecanico UTRA PLUS con teclas pulidas a mano",
         stock:"10"
     
     },
     {
         id: "4",
-        title: "Mousepad",
+        title: "Clases online de guitarra",
+        materia: "Música",
+        ubicacion: "Online",
+        tipo: "Individual",
+        frecuencia: "Única",
         price: "$2000",
-        image: "http://d3ugyf2ht6aenh.cloudfront.net/stores/001/156/703/products/mouse-pad-logitech-g240-gaming-11-fe219448f63610a57416014026632703-640-0.png",
+        image: "/images/avatar.png",
         description: "Mousepad a base de fibras naturales y seda",
         stock:"10"
     
