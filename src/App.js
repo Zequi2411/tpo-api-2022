@@ -12,7 +12,11 @@ import Login from './components/paginas/Login';
 import Footer from './components/Footer/Footer';
 import Recuperar from './components/paginas/Recuperar';
 import ItemListConteiner from './components/paginas/ItemListContainer';
+<<<<<<< HEAD
 import CursosProfesor from './components/paginas/CursosProfesor';
+=======
+import ItemDetailContainer from './components/paginas/ItemDetailContainer';
+>>>>>>> ca7f2cf8d6290cd9ac0c429f35ab53f497671e94
 
 function App() {
   return (
@@ -22,6 +26,7 @@ function App() {
         <Route path="/" element={<NavBar />}>
           <Route index element={<Inicio />} />
           <Route path="cursos" element={<ItemListConteiner greeting='Hola, Bienveni@s!' />} />
+          <Route path='detail/:id' element={<ItemDetailContainer />} />
           <Route path="nosotros" element={<Nosotros />} />
           <Route path="login" element={<Login />} />
           <Route path="singup" element={<SignUp />} />

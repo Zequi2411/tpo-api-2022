@@ -14,6 +14,7 @@ export const ItemList = ({ lista }) => {
           price={product.price}
           image={product.image}
           id={product.id}
+          descripcion={product.description}
         />
       ))}
     </div>

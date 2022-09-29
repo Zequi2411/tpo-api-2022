@@ -55,25 +55,28 @@
 
 .ItemListPadre{
   display: flex;
-  width: 100%;
-  justify-content: space-evenly;
+  width: 60%;
+  justify-content: space-between;
   margin-top: 100px;
   margin-bottom: 50px;
+  flex-direction: column;
+  height: 1000px;
 }
 .ItemPadre{
   border: solid 3px black;
   border-radius: 20px;
+
 }
 .ItemHijo{
   display: flex;
   flex-direction: column;
-  height: 100%;
+  height: 80%;
   justify-content: space-between;
   align-items: center;
   padding: 10px;
 }
 .divPadreItemListConteiner{
-  height: 650px;
+  height: 1250px;
 }
 .LinkItemList{
   display: flex;
@@ -89,4 +92,32 @@
   font-size: 20px;
   color: black;
   font-weight: bold;
+}
+.ILCdiv{
+  display: flex;
+  height: 100%;
+}
+.CS{
+  width: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80%;
+}
+.IPadre{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 300px;
+  border: solid 2px black;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+.IH1{
+  display: flex;
+  justify-content:space-between ;
+  border-bottom: solid 1px black;
+}
+.IH2{
+  display: flex;
 }
