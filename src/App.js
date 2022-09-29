@@ -10,7 +10,9 @@ import Nosotros from './components/paginas/Nosotros';
 import SignUp from './components/paginas/SignUp';
 import Login from './components/paginas/Login';
 import Footer from './components/Footer/Footer';
+import Recuperar from './components/paginas/Recuperar';
 import ItemListConteiner from './components/paginas/ItemListContainer';
+import CursosProfesor from './components/paginas/CursosProfesor';
 
 function App() {
   return (
@@ -23,6 +25,8 @@ function App() {
           <Route path="nosotros" element={<Nosotros />} />
           <Route path="login" element={<Login />} />
           <Route path="singup" element={<SignUp />} />
+          <Route path="recuperar" element={<Recuperar />} />
+          <Route path="cursosprofesor" element={<CursosProfesor />}/>
 
         </Route>
       </Routes>

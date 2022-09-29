@@ -38,8 +38,9 @@ export default function SingUp() {
 // }
 
   const opciones = [
-    {label: 'te gusta la verga'},
-    {label: 'te gusta la verga 2'}
+    {label: '¿Cual es tu comida favorita?'},
+    {label: '¿Cual es tu libro favorito?'},
+    {label: '¿Cual es el nombre de tu primer mascota?'}
   ]
 
 
@@ -145,8 +146,8 @@ export default function SingUp() {
             <Grid container spacing={2}>
             
             <Grid item xs={12} sm={6}>
-            <FormGroup>
-              <FormControlLabel control={<Checkbox defaultChecked />} label="Label" />
+              <FormGroup>
+                <FormControlLabel control={<Checkbox defaultChecked />} label="Label" />
               </FormGroup>
             </Grid>
 

@@ -11,6 +11,7 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import LinkSingUp from '../LinkSingUp/LinkSingUp';
+import LinkRecuperar from '../LinkRecuperar/LinkRecuperar';
 
 
 const theme = createTheme();
@@ -75,11 +76,11 @@ export default function Login() {
             </Button>
             <Grid container>
               <Grid item xs>
-                <Link href="#" variant="body2">
-                  Olvidaste tu Contraseña?
-                </Link>
+                <LinkRecuperar />
               </Grid>
-              <LinkSingUp />
+              <Grid item xs>
+                <LinkSingUp />
+              </Grid>
             </Grid>
           </Box>
         </Box>
