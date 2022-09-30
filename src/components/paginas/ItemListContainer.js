@@ -22,13 +22,13 @@ const ItemListConteiner = () => {
   });
 
   return (
-    <div>
+    <div className='divPadreItemListContainer'>
       <div>
         <input type="text" placeholder="¿Que queres aprender?" onChange={(e) => setQuery(e.target.value)}></input>
         <button type="submit"><img src="/images/search.png"></img></button>
         
         {productList.filter(product=>product.title.toLowerCase().includes(query)).map((product) => (
-          <Item 
+          <Item
           key={product.id}
           title={product.title}
           materia={product.materia}

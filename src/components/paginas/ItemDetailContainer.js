@@ -22,7 +22,7 @@ const ItemDetailContainer = () => {
     });
 
     return (
-        <div className="ItemListPadre">
+        <div className="ItemDetailContainer">
             <ItemDetail Item={Item} />
         </div>
     )
