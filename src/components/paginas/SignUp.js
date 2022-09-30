@@ -10,8 +10,9 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { Grid } from '@mui/material';
 import Autocomplete from '@mui/material/Autocomplete';
 import { useState } from 'react';
-import LinkRecuperar from '../LinkRecuperar/LinkRecuperar';
-import mostrarAlumnos from '../mostrarAlumno/mostrarAlumnos';
+import Checkbox from '@mui/material/Checkbox';
+import FormGroup from '@mui/material/FormGroup';
+import FormControlLabel from '@mui/material/FormControlLabel';
 
 const theme = createTheme();
 
@@ -56,7 +57,7 @@ function SingUp() {
           <Typography component="h1" variant="h5">
             Registrate
           </Typography>
-          <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }} >
+          <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 3 }} >
           <Grid container spacing={2}>
               <Grid item xs={12} sm={6}>
                 <TextField
@@ -137,8 +138,21 @@ function SingUp() {
                 />
               </Grid>
             </Grid>
-              
-              <LinkRecuperar/>
+
+            <Grid container spacing={2} sx={{ mt: 1 }}>
+              <Grid item xs={12} sm={6}>
+                <FormGroup>
+                  <FormControlLabel control={<Checkbox />} label="Alumno" />
+                </FormGroup>
+              </Grid>
+
+              <Grid item xs={12} sm={6}>
+                <FormGroup>
+                  <FormControlLabel control={<Checkbox />} label="Profesor" />
+                </FormGroup>
+              </Grid>
+            </Grid>  
+          
 
             <Button
               type="submit"

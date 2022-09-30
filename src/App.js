@@ -15,7 +15,7 @@ import ItemListConteiner from './components/paginas/ItemListContainer';
 import CursosProfesor from './components/paginas/CursosProfesor';
 import ItemDetailContainer from './components/paginas/ItemDetailContainer';
 import CrearCursos from './components/paginas/CrearCursos';
-import Solicitud from './components/paginas/Solicitud'
+import PaginaSolicitud from './components/paginas/PaginaSolicitud';
 
 
 function App() {
@@ -33,7 +33,7 @@ function App() {
           <Route path="recuperar" element={<Recuperar />} />
           <Route path="cursosprofesor" element={<CursosProfesor />}/>
           <Route path="crearcursos" element={<CrearCursos />}/>
-          <Route path="solicitud" element={<Solicitud />}/>
+          <Route path="solicitud" element={<PaginaSolicitud />}/>
 
         </Route>
       </Routes>
