@@ -1,11 +1,12 @@
 import data from '../CursosSearch/mockData';
 import { useEffect, useState } from "react";
-import { ItemList } from '../ItemList/ItemList';
+import { Item } from '../Item/Item';
 import '../../App.css';
-import CursosSearch from '../CursosSearch/CursosSearch';
 
 const ItemListConteiner = () => {
   const [productList, setProductList] = useState([]);
+
+  const [query, setQuery] = useState("");
 
   useEffect(() => {
     getProducts.then((response) => {
@@ -21,10 +22,25 @@ const ItemListConteiner = () => {
   });
 
   return (
-    <div className="divPadreItemListConteiner">
-      <div className='ILCdiv'>
-        <CursosSearch/>
-        <ItemList lista={productList}/>
+    <div className='divPadreItemListContainer'>
+      <div>
+        <input type="text" placeholder="¿Que queres aprender?" onChange={(e) => setQuery(e.target.value)}></input>
+        <button type="submit"><img src="/images/search.png"></img></button>
+        
+        {productList.filter(product=>product.title.toLowerCase().includes(query)).map((product) => (
+          <Item
+          key={product.id}
+          title={product.title}
+          materia={product.materia}
+          ubicacion={product.ubicacion}
+          tipo={product.tipo}
+          frecuencia={product.frecuencia}
+          price={product.price}
+          image={product.image}
+          id={product.id}
+          descripcion={product.description}
+        />
+        ))}
       </div>
     </div>
   )

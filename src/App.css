@@ -16,14 +16,14 @@
   font-size: 3rem;
 }
 
-.cursos {
+/* .cursos {
   background-image: url('/public/images/artes.jpg');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
   color: #fff;
   font-size: 100px;
-}
+} */
 
 .nosotros {
   background-image: url('/public/images/artes.jpg');
@@ -43,31 +43,23 @@
   font-size: 100px;
 }
 
-.FotoProfesorCont{
-  width: 100%;
-  height: 300px;
-  overflow: hidden;
-}
-
-.FotoProfesor{
-  width: 100%;
-}
-
-.ItemListPadre{
+.ItemDetailContainer{
   display: flex;
-  width: 60%;
+  width: 100%;
   justify-content: space-between;
   margin-top: 100px;
   margin-bottom: 50px;
   flex-direction: column;
   height: 1000px;
 }
-.ItemPadre{
+
+.ItemDetailPadre{
   border: solid 3px black;
   border-radius: 20px;
 
 }
-.ItemHijo{
+
+.ItemDetailHijo{
   display: flex;
   flex-direction: column;
   height: 80%;
@@ -75,16 +67,23 @@
   align-items: center;
   padding: 10px;
 }
-.divPadreItemListConteiner{
-  height: 1250px;
+
+.divPadreItemListContainer{
+  width: 100%;
+  min-height: 100vh;
+  padding: 5%;
+  background-image: url('/public/images/pizarron.jpg');
+  background-position: center;
+  background-size: cover;
 }
+
 .LinkItemList{
   display: flex;
   width: 100%;
   justify-content: space-evenly;
   text-decoration: none;
 }
-.ItemDetailCarrito ,.ItemButton{
+.ItemButton{
   border: solid 2px black;
   background-color: white;
   padding: 10px;
@@ -93,7 +92,8 @@
   color: black;
   font-weight: bold;
 }
-.ILCdiv{
+
+/* .ILCdiv{
   display: flex;
   height: 100%;
 }
@@ -103,7 +103,8 @@
   justify-content: center;
   align-items: center;
   height: 80%;
-}
+} */
+
 .IPadre{
   display: flex;
   flex-direction: column;
@@ -112,6 +113,7 @@
   border: solid 2px black;
   border-radius: 5px;
   margin-bottom: 10px;
+  background-color: #fff;
 }
 .IH1{
   display: flex;
@@ -120,4 +122,8 @@
 }
 .IH2{
   display: flex;
+}
+
+.ItemList{
+  background: #fff;
 }
