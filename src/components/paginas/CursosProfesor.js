@@ -1,6 +1,6 @@
 
 import Button from '@mui/material/Button';
-
+import { Link } from 'react-router-dom';
 
 
 function CursosProfesor() {
@@ -8,14 +8,27 @@ function CursosProfesor() {
 
 
     return(
-        <section>
-        <article className='hola'>
-            <Button variant="contained">SIGN UP</Button>
-        </article>
+        <div>
         <article className='e'>
-            <Button>SIGN UP</Button>
+            <Link to='/crearcursos'>
+                <Button variant="contained">
+                    Crear Curso
+                </Button>
+            </Link>
         </article>
-        </section>
+        <article className='a'>
+            <Button variant="contained">
+                Modificar Curso
+            </Button>
+        </article>
+        <article>
+            <Link to='/solicitud'>
+                <Button variant="contained">
+                    Solicitudes
+                </Button>
+            </Link>
+        </article>
+        </div>
     )
 }
 

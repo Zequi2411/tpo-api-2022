@@ -3,7 +3,7 @@ import { Link } from "react-router-dom"
 const LinkRecuperar = () => {
     return (
       <footer>
-         <Link to='/Recuperar'>Olvidaste tu Contraseña? Recuperar</Link>
+         <Link to='/recuperar'>Olvidaste tu Contraseña? Recuperar</Link>
       </footer>
     )
   }

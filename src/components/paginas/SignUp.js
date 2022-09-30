@@ -9,13 +9,14 @@ import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { Grid } from '@mui/material';
 import Autocomplete from '@mui/material/Autocomplete';
-import Checkbox from '@mui/material/Checkbox';
-import FormGroup from '@mui/material/FormGroup';
-import FormControlLabel from '@mui/material/FormControlLabel';
+import { useState } from 'react';
+import LinkRecuperar from '../LinkRecuperar/LinkRecuperar';
+import mostrarAlumnos from '../mostrarAlumno/mostrarAlumnos';
 
 const theme = createTheme();
 
-export default function SingUp() {
+function SingUp() {
+
   const handleSubmit = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
@@ -24,18 +25,11 @@ export default function SingUp() {
       apellido: data.get('apellido'),
       email: data.get('email'),
       contraseña: data.get('contraseña'),
-      pregunta: data.get('pregunta-seguridad'),
+      respuesta: data.get('respuesta')
 
     });
   };
 
-// export default function ControlledCheckbox() {
-//   const [checked, setChecked] = React.useState(true);
-  
-//   const handleChange = (event) => {
-//     setChecked(event.target.checked);
-//   };
-// }
 
   const opciones = [
     {label: '¿Cual es tu comida favorita?'},
@@ -143,16 +137,8 @@ export default function SingUp() {
                 />
               </Grid>
             </Grid>
-            <Grid container spacing={2}>
-            
-            <Grid item xs={12} sm={6}>
-              <FormGroup>
-                <FormControlLabel control={<Checkbox defaultChecked />} label="Label" />
-              </FormGroup>
-            </Grid>
-
-            </Grid>
-
+              
+              <LinkRecuperar/>
 
             <Button
               type="submit"
@@ -168,3 +154,5 @@ export default function SingUp() {
     </ThemeProvider>
   );
 }
+
+export default SingUp;

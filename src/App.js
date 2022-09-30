@@ -12,11 +12,11 @@ import Login from './components/paginas/Login';
 import Footer from './components/Footer/Footer';
 import Recuperar from './components/paginas/Recuperar';
 import ItemListConteiner from './components/paginas/ItemListContainer';
-<<<<<<< HEAD
 import CursosProfesor from './components/paginas/CursosProfesor';
-=======
 import ItemDetailContainer from './components/paginas/ItemDetailContainer';
->>>>>>> ca7f2cf8d6290cd9ac0c429f35ab53f497671e94
+import CrearCursos from './components/paginas/CrearCursos';
+import Solicitud from './components/paginas/Solicitud'
+
 
 function App() {
   return (
@@ -32,6 +32,8 @@ function App() {
           <Route path="singup" element={<SignUp />} />
           <Route path="recuperar" element={<Recuperar />} />
           <Route path="cursosprofesor" element={<CursosProfesor />}/>
+          <Route path="crearcursos" element={<CrearCursos />}/>
+          <Route path="solicitud" element={<Solicitud />}/>
 
         </Route>
       </Routes>

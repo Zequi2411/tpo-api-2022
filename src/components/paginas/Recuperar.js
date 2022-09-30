@@ -10,15 +10,13 @@ import BuildCircleIcon from '@mui/icons-material/BuildCircle';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import { Link } from "react-router-dom"
-import { useState } from 'react';
 
 
 
 
 const theme = createTheme();
 
-export default function Login() {
+function Recuperar() {
 
     // const RecuperarUsuario = ({onAdd}) => {
     //     const [email, setEmail] = useState('')
@@ -35,7 +33,7 @@ export default function Login() {
     console.log({
       email: data.get('email'),
       respuesta: data.get('respuesta'),
-      password: data.get('password')
+      password: data.get('contraseña')
     });
   };
 
@@ -77,7 +75,6 @@ export default function Login() {
               margin="normal"
               required
               fullWidth
-              id="email"
               label="Dirección"
               name="email"
               autoComplete="email"
@@ -101,7 +98,6 @@ export default function Login() {
                   fullWidth
                   name="respuesta"
                   label="Respuesta"
-                  id="respuesta"
                 />
               </Grid>
             </Grid>
@@ -109,11 +105,9 @@ export default function Login() {
               margin="normal"
               required
               fullWidth
-              name="password"
+              name="contraseña"
               label="Ingresar Nueva Contraseña"
               type="password"
-              id="password"
-              autoComplete="current-password"
             />
             <Button
                 type="submit"
@@ -130,3 +124,5 @@ export default function Login() {
     </ThemeProvider>
   );
 }
+
+export default Recuperar;
