@@ -1,6 +1,8 @@
-const CursosSearch = () => {
+import React from 'react'
+
+function CursosSearch() {
   return (
-    <div className="CS">CursosSearch</div>
+    <div>CursosSearch</div>
   )
 }
 
