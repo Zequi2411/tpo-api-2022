@@ -5,9 +5,7 @@ import './App.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import NavBar from './components/NavBar/NavBar'
 import Inicio from './components/paginas/Inicio';
-import Cursos from './components/paginas/Cursos';
 import Nosotros from './components/paginas/Nosotros';
-import SignUp from './components/Registro/SignUp';
 import Login from './components/paginas/Login';
 import Footer from './components/Footer/Footer';
 import Recuperar from './components/paginas/Recuperar';
@@ -16,6 +14,9 @@ import CursosProfesor from './components/paginas/CursosProfesor';
 import ItemDetailContainer from './components/paginas/ItemDetailContainer';
 import CrearCursos from './components/paginas/CrearCursos';
 import PaginaSolicitud from './components/paginas/Solicitudes';
+import TipoUsuario from './components/Registro/TipoUsuario';
+import RegistroAlumno from './components/Registro/RegistroAlumno';
+import RegistroProfesor from './components/Registro/RegistroProfesor';
 
 
 function App() {
@@ -29,11 +30,13 @@ function App() {
           <Route path='detail/:id' element={<ItemDetailContainer />} />
           <Route path="nosotros" element={<Nosotros />} />
           <Route path="login" element={<Login />} />
-          <Route path="singup" element={<SignUp />} />
           <Route path="recuperar" element={<Recuperar />} />
           <Route path="cursosprofesor" element={<CursosProfesor />}/>
           <Route path="crearcursos" element={<CrearCursos />}/>
           <Route path="solicitud" element={<PaginaSolicitud />}/>
+          <Route path="tipousuario" element={<TipoUsuario />}/>
+          <Route path="registroalumno" element={<RegistroAlumno />}/>
+          <Route path="registroprofesor" element={<RegistroProfesor />}/>
 
         </Route>
       </Routes>

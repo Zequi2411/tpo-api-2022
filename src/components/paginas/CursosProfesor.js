@@ -4,7 +4,6 @@ import Button from '@mui/material/Button';
 import { Link } from 'react-router-dom';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
-import TextField from '@mui/material/TextField';
 import IconButton from '@mui/material/IconButton';
 import DeleteIcon from '@mui/icons-material/Delete';
 import FormControlLabel from '@mui/material/FormControlLabel';
@@ -12,10 +11,8 @@ import Switch from '@mui/material/Switch';
 import { useState } from "react";
 import Container from "@mui/material/Container";
 import Card from "@mui/material/Card";
-import CardContent from '@mui/material/CardContent';
 import Paper from "@mui/material/Paper";
 import Stack from "@mui/material/Stack";
-import AgregarAlumno from '../Registro/Alumno/AgregarAlumno';
 
 
 function CursosProfesor() {
