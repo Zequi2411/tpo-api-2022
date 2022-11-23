@@ -12,6 +12,7 @@ import { useState } from "react";
 import Container from "@mui/material/Container";
 import Card from "@mui/material/Card";
 import Paper from "@mui/material/Paper";
+import Divider from '@mui/material/Divider';
 import Stack from "@mui/material/Stack";
 
 
@@ -65,7 +66,7 @@ function CursosProfesor() {
             <Grid container>
                 {resultsList.map((singleResult, index) => (
                     
-                    <Grid item xs={12} sx={{ flexGrow: 1, marginLeft:6, marginRight:6, marginTop:6, marginBottom:6, alignItems:"center"}}>
+                    <Grid item xs={12} sx={{ flexGrow: 1, marginLeft:15, marginRight:15, marginTop:4, marginBottom:4, alignItems:"center",}}>
                         <Card key={index} sx={{ backgroundColor: "grey", border: " 2px solid grey",}}>
                             <Box sx={{ display: 'flex',justifyContent:"flex-start", alignItems:"center",height: 50,}}>
                                 <Typography component="div" variant="h7">
@@ -94,7 +95,8 @@ function CursosProfesor() {
                                     Publico
                                 </Typography>
                             </Box>
-                            <Grid xs={6} md={7} lg={6}>
+                            <Divider variant="middle"/>
+                            <Grid xs={6} md={7} lg={6} sx={{mt:2}}>
                                 <Box sx={{ display: 'flex', flexDirection: 'row'}}>
                                     <Box sx={{ display: 'flex', flexDirection: 'column', alignItems:"left"}}>
                                         <Typography component="div" variant="h7">

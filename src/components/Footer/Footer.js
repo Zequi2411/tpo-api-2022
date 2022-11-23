@@ -95,12 +95,12 @@ function Footer() {
               <i class='fab fa-twitter' />
             </Link>
             <Link
-              class='social-icon-link twitter'
-              href="https://www.linkedin.com"
+              class='social-icon-link github'
+              href="https://github.com/Gabirojas1/tpo-api-2022.git"
               target='_blank'
               aria-label='LinkedIn'
             >
-              <i class='fab fa-linkedin' />
+              <i class='fab fa-github' />
             </Link>
           </div>
         </div>
