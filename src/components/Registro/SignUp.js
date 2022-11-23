@@ -10,13 +10,18 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { Grid } from '@mui/material';
 import Autocomplete from '@mui/material/Autocomplete';
 import { useState } from 'react';
-import Checkbox from '@mui/material/Checkbox';
 import FormGroup from '@mui/material/FormGroup';
-import FormControlLabel from '@mui/material/FormControlLabel';
+import Alumno from './Alumno/Alumno';
+import AgregarAlumno from './Alumno/AgregarAlumno';
+
+
 
 const theme = createTheme();
 
 function SingUp() {
+
+  const [fechaSeleccionada, CambiarFechaSeleccionada] = useState(new Date());
+  const[MostrarAlumno, setMostrarAlumno] = useState(false)
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -142,16 +147,21 @@ function SingUp() {
             <Grid container spacing={2} sx={{ mt: 1 }}>
               <Grid item xs={12} sm={6}>
                 <FormGroup>
-                  <FormControlLabel control={<Checkbox />} label="Alumno" />
+                  <Alumno onAlumno={() => setMostrarAlumno(!MostrarAlumno)}/>
+                  {MostrarAlumno && <AgregarAlumno />}
                 </FormGroup>
               </Grid>
 
               <Grid item xs={12} sm={6}>
                 <FormGroup>
-                  <FormControlLabel control={<Checkbox />} label="Profesor" />
+                <Button sx={{color:"black"}}>Profesor</Button>
                 </FormGroup>
               </Grid>
+              
             </Grid>  
+            <Grid container spacing={2} sx={{ mt: 1 }}>
+        
+        </Grid>
           
 
             <Button
@@ -164,6 +174,16 @@ function SingUp() {
             </Button>
           </Box>
         </Box>
+        <TextField
+        id="date"
+        label="Birthday"
+        type="date"
+        defaultValue="2017-05-24"
+        sx={{ width: 220 }}
+        InputLabelProps={{
+          shrink: true,
+        }}
+      />
       </Container>
     </ThemeProvider>
   );

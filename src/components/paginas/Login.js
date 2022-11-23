@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, {useState} from 'react';
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -11,18 +11,19 @@ import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import LinkSingUp from '../LinkSingUp/LinkSingUp';
 import LinkRecuperar from '../LinkRecuperar/LinkRecuperar';
+import {useLocation} from 'wouter';
 
 
 const theme = createTheme();
 
 function Login() {
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    console.log({
-      email: data.get('email'),
-      contraseña: data.get('contraseña'),
-    });
+  const [email, SetUsuario] = useState("");
+  const [contraseña, SetContraseña] = useState("");
+  const [, navigate] = useLocation()
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    navigate('/')
   };
 
   return (
@@ -49,10 +50,12 @@ function Login() {
               required
               fullWidth
               id="email"
-              label="Dirección"
+              label="Correo electrónico"
               name="email"
               autoComplete="email"
               autoFocus
+              onChange={(e) => SetUsuario(e.target.value)}
+              value={email}
             />
             <TextField
               margin="normal"
@@ -61,8 +64,10 @@ function Login() {
               name="contraseña"
               label="Contraseña"
               type="password"
-              id="password"
+              id="contraseña"
               autoComplete="current-password"
+              onChange={(e) => SetContraseña(e.target.value)}
+              value={contraseña}
             />
             
             <Button

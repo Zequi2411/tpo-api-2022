@@ -7,7 +7,7 @@ import NavBar from './components/NavBar/NavBar'
 import Inicio from './components/paginas/Inicio';
 import Cursos from './components/paginas/Cursos';
 import Nosotros from './components/paginas/Nosotros';
-import SignUp from './components/paginas/SignUp';
+import SignUp from './components/Registro/SignUp';
 import Login from './components/paginas/Login';
 import Footer from './components/Footer/Footer';
 import Recuperar from './components/paginas/Recuperar';
@@ -15,7 +15,7 @@ import ItemListConteiner from './components/paginas/ItemListContainer';
 import CursosProfesor from './components/paginas/CursosProfesor';
 import ItemDetailContainer from './components/paginas/ItemDetailContainer';
 import CrearCursos from './components/paginas/CrearCursos';
-import PaginaSolicitud from './components/paginas/PaginaSolicitud';
+import PaginaSolicitud from './components/paginas/Solicitudes';
 
 
 function App() {

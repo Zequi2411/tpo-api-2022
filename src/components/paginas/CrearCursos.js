@@ -5,94 +5,121 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import { Grid } from '@mui/material';
+import Grid from '@mui/material/Grid';
 import Autocomplete from '@mui/material/Autocomplete';
 import Checkbox from '@mui/material/Checkbox';
 import FormGroup from '@mui/material/FormGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import { Link } from 'react-router-dom';
+import { useState } from "react";
 
 const theme = createTheme();
 
 
 function CrearCursos() {
-    const handleSubmit = (event) => {
-        event.preventDefault();
-        const data = new FormData(event.currentTarget);
-        console.log({
-          nombrecurso: data.get('nombrecurso'),
-          nombremateria: data.get('nombremateria'),
-          costo: data.get('costo'),
-        });
+
+      const[nombrecurso, setNombreCurso] = useState('');
+
+      const[nombremateria, setNombreMateria] = useState('');
+      
+      const[horainicio, setHoraInicio] = useState('');
+
+      const handleChange = (event, value) => setHoraInicio(value);
+
+      const[horaFin, setHoraFin] = useState('');
+
+      const[lunes, setLunes] = useState('');
+
+
+
+      const handleSubmit = (e) => {
+        e.preventDefault();
+
+        if(!nombrecurso){
+          alert('Por Favor Agregue el Nombre del Curso')
+          return
+        }
+
+        console.log(nombrecurso);
+
+        if(!nombremateria){
+          alert('Por Favor Agregue el Nombre de la Materia')
+          return
+        }
+
+        console.log(nombremateria);
+
+        console.log.apply(horainicio)
+
       };
     
     
       const opcionesinicio = [
-        {label: '8:00'},
-        {label: '8:30'},
-        {label: '9:00'},
-        {label: '9:30'},
-        {label: '10:00'},
-        {label: '10:30'},
-        {label: '11:00'},
-        {label: '11:30'},
-        {label: '12:00'},
-        {label: '12:30'},
-        {label: '13:00'},
-        {label: '13:30'},
-        {label: '14:00'},
-        {label: '14:30'},
-        {label: '15:00'},
-        {label: '15:30'},
-        {label: '16:00'},
-        {label: '16:30'},
-        {label: '17:00'},
-        {label: '17:30'},
-        {label: '18:00'},
-        {label: '18:30'},
-        {label: '19:00'},
-        {label: '19:30'},
-        {label: '20:00'},
-        {label: '20:30'},
+        {hora: '8:00'},
+        {hora: '8:30'},
+        {hora: '9:00'},
+        {hora: '9:30'},
+        {hora: '10:00'},
+        {hora: '10:30'},
+        {hora: '11:00'},
+        {hora: '11:30'},
+        {hora: '12:00'},
+        {hora: '12:30'},
+        {hora: '13:00'},
+        {hora: '13:30'},
+        {hora: '14:00'},
+        {hora: '14:30'},
+        {hora: '15:00'},
+        {hora: '15:30'},
+        {hora: '16:00'},
+        {hora: '16:30'},
+        {hora: '17:00'},
+        {hora: '17:30'},
+        {hora: '18:00'},
+        {hora: '18:30'},
+        {hora: '19:00'},
+        {hora: '19:30'},
+        {hora: '20:00'},
+        {hora: '20:30'},
       ]
 
       const opcionesfin = [
-        {label: '8:30'},
-        {label: '9:00'},
-        {label: '9:30'},
-        {label: '10:00'},
-        {label: '10:30'},
-        {label: '11:00'},
-        {label: '11:30'},
-        {label: '12:00'},
-        {label: '12:30'},
-        {label: '13:00'},
-        {label: '13:30'},
-        {label: '14:00'},
-        {label: '14:30'},
-        {label: '15:00'},
-        {label: '15:30'},
-        {label: '16:00'},
-        {label: '16:30'},
-        {label: '17:00'},
-        {label: '17:30'},
-        {label: '18:00'},
-        {label: '18:30'},
-        {label: '19:00'},
-        {label: '19:30'},
-        {label: '20:00'},
-        {label: '20:30'},
-        {label: '21:00'},
+        {hora: '8:30'},
+        {hora: '9:00'},
+        {hora: '9:30'},
+        {hora: '10:00'},
+        {hora: '10:30'},
+        {hora: '11:00'},
+        {hora: '11:30'},
+        {hora: '12:00'},
+        {hora: '12:30'},
+        {hora: '13:00'},
+        {hora: '13:30'},
+        {hora: '14:00'},
+        {hora: '14:30'},
+        {hora: '15:00'},
+        {hora: '15:30'},
+        {hora: '16:00'},
+        {hora: '16:30'},
+        {hora: '17:00'},
+        {hora: '17:30'},
+        {hora: '18:00'},
+        {hora: '18:30'},
+        {hora: '19:00'},
+        {hora: '19:30'},
+        {hora: '20:00'},
+        {hora: '20:30'},
+        {hora: '21:00'},
       ]
     
     
       return (
         <ThemeProvider theme={theme}>
-          <Container component="main" maxWidth="1920px" style={{ height:"800px" }}>
+          <Container component="main" maxWidth="1920px" sx={{marginBottom:4}}>
             <CssBaseline />
             <Box
               sx={{
-                marginTop: 10,
+                marginTop: 7,
                 display: 'flex',
                 flexDirection: 'column',
                 alignItems: 'center',
@@ -112,8 +139,10 @@ function CrearCursos() {
                       required
                       fullWidth
                       id="nombrecurso"
-                      label="Nombre del Curso"
-                      name="nombrecurso"
+                      hora="Nombre del Curso"
+                      type="text"
+                      value={nombrecurso}
+                      onChange={(e) => setNombreCurso(e.target.value)}
                     />
                   </Grid>
                 </Grid>
@@ -127,8 +156,9 @@ function CrearCursos() {
                       required
                       fullWidth
                       id="nombremateria"
-                      label="Nombre de la Materia"
-                      name="nombremateria"
+                      hora="Nombre de la Materia"
+                      value={nombremateria}
+                      onChange={(e) => setNombreMateria(e.target.value)}
                     />
                   </Grid>
                 </Grid>
@@ -142,6 +172,9 @@ function CrearCursos() {
                       margin="normal"
                       required
                       fullWidth
+                      getOptionLabel={(option) => option.hora}
+                      onChange={handleChange}
+                      filterSelectedOptions
                       renderInput={(params) => <TextField {...params} label="Horario de Inicio" />}
                     />
                   </Grid>
@@ -161,37 +194,37 @@ function CrearCursos() {
                 <Grid container spacing={2} sx={{ mt: 1 }}>
                 <Grid item xs={12} sm={2}>
                   <FormGroup>
-                    <FormControlLabel control={<Checkbox defaultChecked />} label="lun" />
+                    <FormControlLabel control={<Checkbox />} label="lun" />
                   </FormGroup>
                 </Grid>
                 <Grid item xs={12} sm={2}>
                   <FormGroup>
-                    <FormControlLabel control={<Checkbox defaultChecked />} label="mar" />
+                    <FormControlLabel control={<Checkbox />} label="mar" />
                   </FormGroup>
                 </Grid>
                 <Grid item xs={12} sm={2}>
                   <FormGroup>
-                    <FormControlLabel control={<Checkbox defaultChecked />} label="mie" />
+                    <FormControlLabel control={<Checkbox />} label="mie" />
                   </FormGroup>
                 </Grid>
                 <Grid item xs={12} sm={2}>
                   <FormGroup>
-                    <FormControlLabel control={<Checkbox defaultChecked />} label="jue" />
+                    <FormControlLabel control={<Checkbox />} label="jue" />
                   </FormGroup>
                 </Grid>
                 <Grid item xs={12} sm={2}>
                   <FormGroup>
-                    <FormControlLabel control={<Checkbox defaultChecked />} label="vie" />
+                    <FormControlLabel control={<Checkbox />} label="vie" />
                   </FormGroup>
                 </Grid>
                 <Grid item xs={12} sm={2}>
                   <FormGroup>
-                    <FormControlLabel control={<Checkbox defaultChecked />} label="sab" />
+                    <FormControlLabel control={<Checkbox />} label="sab" />
                   </FormGroup>
                 </Grid>
                 <Grid item xs={12} sm={2}>
                   <FormGroup>
-                    <FormControlLabel control={<Checkbox defaultChecked />} label="dom" />
+                    <FormControlLabel control={<Checkbox />} label="dom" />
                   </FormGroup>
                 </Grid>
                 </Grid>
