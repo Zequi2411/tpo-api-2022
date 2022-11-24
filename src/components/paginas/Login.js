@@ -1,9 +1,8 @@
-import * as React from 'react';
+import React, {useState} from 'react';
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
 import TextField from '@mui/material/TextField';
-import Link from '@mui/material/Link';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
@@ -11,18 +10,20 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import LinkSingUp from '../LinkSingUp/LinkSingUp';
+import LinkRecuperar from '../LinkRecuperar/LinkRecuperar';
+import {useLocation} from 'wouter';
 
 
 const theme = createTheme();
 
-export default function Login() {
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    console.log({
-      email: data.get('email'),
-      password: data.get('password'),
-    });
+function Login() {
+  const [email, SetUsuario] = useState("");
+  const [contraseña, SetContraseña] = useState("");
+  const [, navigate] = useLocation()
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    navigate('/')
   };
 
   return (
@@ -49,20 +50,24 @@ export default function Login() {
               required
               fullWidth
               id="email"
-              label="Dirección"
+              label="Correo electrónico"
               name="email"
               autoComplete="email"
               autoFocus
+              onChange={(e) => SetUsuario(e.target.value)}
+              value={email}
             />
             <TextField
               margin="normal"
               required
               fullWidth
-              name="password"
+              name="contraseña"
               label="Contraseña"
               type="password"
-              id="password"
+              id="contraseña"
               autoComplete="current-password"
+              onChange={(e) => SetContraseña(e.target.value)}
+              value={contraseña}
             />
             
             <Button
@@ -75,11 +80,11 @@ export default function Login() {
             </Button>
             <Grid container>
               <Grid item xs>
-                <Link href="#" variant="body2">
-                  Olvidaste tu Contraseña?
-                </Link>
+                <LinkRecuperar />
               </Grid>
-              <LinkSingUp />
+              <Grid item xs>
+                <LinkSingUp />
+              </Grid>
             </Grid>
           </Box>
         </Box>
@@ -87,3 +92,5 @@ export default function Login() {
     </ThemeProvider>
   );
 }
+
+export default Login;
