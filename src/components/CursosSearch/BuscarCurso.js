@@ -14,6 +14,7 @@ import CardHeader from '@mui/material/CardHeader';
 import StarIcon from '@mui/icons-material/Star';
 import StarBorderIcon from "@mui/icons-material/StarBorder";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
+import CursosContainer from '../CursosContainer/CursosContainer';
 
 
 const Clases = [
@@ -224,7 +225,7 @@ function BuscarCurso() {
                 </Grid>
             </Grid>
         </Paper>
-
+        <CursosContainer/>
     </div>
   )
 }
