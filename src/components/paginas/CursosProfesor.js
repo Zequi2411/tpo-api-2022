@@ -1,7 +1,6 @@
 import * as React from 'react';
 import Grid from '@mui/material/Unstable_Grid2';
 import Button from '@mui/material/Button';
-import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import IconButton from '@mui/material/IconButton';
 import DeleteIcon from '@mui/icons-material/Delete';
@@ -13,7 +12,7 @@ import Divider from '@mui/material/Divider';
 import Stack from "@mui/material/Stack";
 
 
-const CursosProfesor = ({id, nombreMateria, horario, dias, costo, comentario1, comentario2}) => {
+const CursosProfesor = () => {
     const [value, setValue] = React.useState(0);
 
   const handleChange = (event, newValue) => {
