@@ -43,7 +43,7 @@
   font-size: 100px;
 }
 
-.ItemDetailContainer{
+/* .ItemDetailContainer{
   display: flex;
   width: 100%;
   justify-content: space-between;
@@ -51,9 +51,9 @@
   margin-bottom: 50px;
   flex-direction: column;
   height: 1000px;
-}
+} */
 
-.ItemDetailPadre{
+/* .ItemDetailPadre{
   border: solid 3px black;
   border-radius: 20px;
 
@@ -75,7 +75,7 @@
   background-image: url('/public/images/pizarron.jpg');
   background-position: center;
   background-size: cover;
-}
+} */
 
 .LinkItemList{
   display: flex;

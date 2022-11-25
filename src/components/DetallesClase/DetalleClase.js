@@ -1,10 +1,13 @@
-import React from 'react'
 import { Avatar, Divider, Typography } from '@mui/material'
 import Grid from '@mui/material/Unstable_Grid2'
+import React from 'react'
 
-const ItemDetail = ({ Item }) => {
-    return (
-        <Grid container margin={2} justifyContent={"space-evenly"}>
+
+
+
+const DetalleClase = ({Item}) => { 
+  return (
+    <Grid container margin={2} justifyContent={"space-evenly"}>
         <Grid container xs={8} sx={{backgroundColor: "#e1f7f1", border: " 2px solid #117c6f"}}>
             <Grid container xs={12}>
                 <Grid item marginLeft={2}>
@@ -80,7 +83,7 @@ const ItemDetail = ({ Item }) => {
                         <Grid container direction={"row"} spacing={0.5}>
                             <Grid item>
                             <Typography variant='body2' fontWeight={"bold"}>
-                                {Item.description} 
+                                Duración: 
                             </Typography>
                             </Grid>
                         </Grid>
@@ -95,7 +98,7 @@ const ItemDetail = ({ Item }) => {
 
         </Grid>
     </Grid>
-    )
+  )
 }
 
-export default ItemDetail
+export default DetalleClase
