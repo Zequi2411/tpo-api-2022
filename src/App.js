@@ -18,6 +18,8 @@ import TipoUsuario from './components/Registro/TipoUsuario';
 import RegistroAlumno from './components/Registro/RegistroAlumno';
 import RegistroProfesor from './components/Registro/RegistroProfesor';
 import BuscarCurso from './components/CursosSearch/BuscarCurso';
+import Cursos from './components/paginas/Cursos';
+import ModificarClase from './components/Modificar/ModificarClase';
 
 
 function App() {
@@ -39,6 +41,8 @@ function App() {
           <Route path="registroalumno" element={<RegistroAlumno />}/>
           <Route path="registroprofesor" element={<RegistroProfesor />}/>
           <Route path="buscarcurso" element={<BuscarCurso />}/>
+          <Route path="curso" element={<Cursos />}/>
+          <Route path="modificarclase/:id" element={<ModificarClase />}/>
 
         </Route>
       </Routes>

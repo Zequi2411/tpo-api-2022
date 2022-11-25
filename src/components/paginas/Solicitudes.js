@@ -18,16 +18,21 @@ function Solicitudes() {
 
   return (
     <Box sx={{ flexGrow: 1, marginLeft:15, marginRight:15, marginTop:6, marginBottom:6, alignItems:"center"}}>
-        <Grid container spacing={2} bgcolor={"#d8e8e8"} alignContent={"center"} alignItems={"center"}>
-            <Grid xs={10} md={4} lg={3}>
-                <Box sx={{display: 'flex', flexDirection: 'column', alignItems:"center"}}>
+        
+        <Grid container spacing={2} sx={{backgroundColor: "#e1f7f1", border: " 2px solid #117c6f",}} alignContent={"center"} alignItems={"center"}>
+            <Grid container xs={10} md={4} lg={3} justifyContent="center">
+                <Grid container sx={{display: 'flex', flexDirection: 'column', alignItems:"center", }}>
+                    <Grid item>
                     <Avatar sx={{ m: 1, bgcolor: 'red' }}>
                         <AccountCircle />
                     </Avatar>
+                    </Grid>
+                    <Grid item>
                     <Typography component="div" variant="h5">
                         Cosme Fulanito
                     </Typography>
-                </Box>
+                    </Grid>
+                </Grid>
             </Grid>
             <Grid container xs={12} md={7} lg={8} direction={'row'} spacing={4}>
                 <Grid xs={12} md={12} lg={12}>
