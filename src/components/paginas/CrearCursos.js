@@ -12,6 +12,7 @@ import FormGroup from '@mui/material/FormGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import { Link } from 'react-router-dom';
 import { useState } from "react";
+import MenuItem from '@mui/material/MenuItem';
 
 const theme = createTheme();
 
@@ -24,11 +25,20 @@ function CrearCursos() {
       
       const[horainicio, setHoraInicio] = useState('');
 
-      const handleChange = (event, value) => setHoraInicio(value);
+      //const handleChange = (event, value) => setHoraInicio(value);
+
+      const handleChange = (event) => {
+        setClase(event.target.value);
+        setFrecuencia(event.target.value);
+      };
 
       const[horaFin, setHoraFin] = useState('');
 
       const[lunes, setLunes] = useState('');
+
+      const [tipoClase, setClase] = useState();
+      
+      const [tipoFrecuencia, setFrecuencia] = useState();
 
 
 
@@ -111,6 +121,32 @@ function CrearCursos() {
         {hora: '20:30'},
         {hora: '21:00'},
       ]
+
+      const Clases = [
+        {
+            value:'ind',
+            label:'Individual'
+        },
+        {
+            value:'gru',
+            label:'Grupal'
+        },
+    ]
+    
+    const Frecuencias = [
+        {
+            value:'uni',
+            label:'Única'
+        },
+        {
+            value:'sem',
+            label:'Semanal'
+        },
+        {
+            value:'men',
+            label:'Mensual'
+        },
+    ]
     
     
       return (
@@ -190,6 +226,38 @@ function CrearCursos() {
                     />
                   </Grid>
                 </Grid>
+                <Grid container spacing={2} sx={{ mt:1 }}>
+                  <Grid item xs={12} sm={6}>
+                    <TextField
+                      select
+                      fullWidth
+                      value={tipoClase}
+                      onChange={handleChange}
+                      label="Seleccione el Tipo de Clase"
+                    >
+                      {Clases.map((option) => (
+                        <MenuItem key={option.value} value={option.value}>
+                          {option.label}
+                        </MenuItem>
+                      ))}
+                    </TextField>
+                  </Grid>
+                  <Grid item xs={12} sm={6}>
+                    <TextField
+                      select
+                      fullWidth
+                      value={tipoFrecuencia}
+                      onChange={handleChange}
+                      label="Seleccione la Frecuencia"
+                    >
+                      {Frecuencias.map((option) => (
+                        <MenuItem key={option.value} value={option.value}>
+                          {option.label}
+                        </MenuItem>
+                      ))}
+                    </TextField>
+                  </Grid>
+                </Grid>
                 
                 <Grid container spacing={2} sx={{ mt: 1 }}>
                 <Grid item xs={12} sm={2}>
@@ -242,7 +310,6 @@ function CrearCursos() {
                     />
                   </Grid>
                 </Grid>
-
                 <Grid container spacing={2} sx={{ mt:1 }}>
                     <Grid item xs={12} sm={4} sx={{ mt:2 }} >  
                         <Button

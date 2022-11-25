@@ -17,11 +17,21 @@ import data from '../CursosSearch/mockData';
 export default function CursosContainer() {
     return (
         <Box sx={{ flexGrow: 1 }}>
-            <Grid container spacing={2}>
+            <Grid container spacing={2} marginBottom={2}>
                 {
                     data.map(product => (
                         <Grid xs={12} sm={6} md={4} lg={3}>
-                            <CursoCard key={product.id} product={product}/>
+                            <CursoCard key={product.id}
+                            title={product.title}
+                            materia={product.materia}
+                            ubicacion={product.ubicacion}
+                            tipo={product.tipo}
+                            frecuencia={product.frecuencia}
+                            price={product.price}
+                            image={product.image}
+                            id={product.id}
+                            description={product.description}
+                            rating={product.rating} />
                         </Grid>
                     ))
                 }
@@ -29,3 +39,4 @@ export default function CursosContainer() {
         </Box>
     );
 }
+//product={product}

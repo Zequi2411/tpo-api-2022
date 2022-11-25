@@ -10,6 +10,7 @@ const data = [
         image: "/images/idiomas.jpg",
         description: "Es mi idioma preferido , después del castellano. Con estás clases intento Lograr independencia económica y de cargas horarias. Cambiar la profesión",
         rating: 5,
+        
     },
     {
         id: "2",

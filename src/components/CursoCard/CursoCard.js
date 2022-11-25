@@ -26,7 +26,7 @@ const ExpandMore = styled((props) => {
     }),
 }));
 
-export default function CursoCard({ product: { id, title, materia, ubicacion, tipo, frecuencia, price, image, description, rating } }) {
+export default function CursoCard({id, title, materia, ubicacion, tipo, frecuencia, price, image, description, rating }) {
     const [expanded, setExpanded] = React.useState(false);
 
     const handleExpandClick = () => {
@@ -58,12 +58,12 @@ export default function CursoCard({ product: { id, title, materia, ubicacion, ti
                     variant='h6'
                     color='textSecondary'
                 >
-                    {price}
+                    {price}/h
                     {/* {accounting.formatMoney(price)}/h */}
                 </Typography>
             </CardContent>
             <CardActions disableSpacing>
-                <IconButton aria-label="add to favorites">
+                <IconButton aria-label="add to favorites" href={'/detail/' + id}>
                     <ZoomInIcon />
                 </IconButton>
                 {Array(rating)
