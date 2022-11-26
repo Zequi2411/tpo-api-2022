@@ -7,7 +7,7 @@ const ItemDetail = ({ Item }) => {
     const rating = 3;
     return (
         <Grid container margin={2} justifyContent={"space-evenly"}>
-            <Grid container xs={8} justifyContent={"center"} sx={{backgroundColor: "#e1f7f1", border: " 2px solid #117c6f"}} marginBottom={2}>
+            <Grid container xs={8} justifyContent={"center"} sx={{backgroundColor: "#e1f7f1", border: " 2px solid #117c6f", borderRadius:2}} marginBottom={2}>
                 <Grid container xs={12}>
                     <Grid item marginLeft={2}>
                         <Typography variant="h5">
@@ -140,7 +140,7 @@ const ItemDetail = ({ Item }) => {
                 </Grid>
             </Grid>
             <Grid container xs={3} maxHeight="370px">
-                <Grid container xs={12} sx={{border: " 2px solid #117c6f"}} >
+                <Grid container xs={12} sx={{border: " 2px solid #117c6f", borderRadius:2}} >
                     <Grid container xs={12} margin={2}>
                         <Grid item>
                             <TextField label={"Telefono"} size="small"/>
