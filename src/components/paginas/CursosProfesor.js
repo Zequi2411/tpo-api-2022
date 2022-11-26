@@ -60,7 +60,7 @@ const CursosProfesor = () => {
 
             <Grid container xs={12} alignContent="center" justifyContent={"center"}>
                 {resultsList.map((singleResult, index) => (
-                    <Grid container xs={5} sx={{ backgroundColor: "#e1f7f1",border: " 2px solid #117c6f", margin:4, alignItems:"center",}}>
+                    <Grid container xs={5} sx={{ backgroundColor: "#e1f7f1",border: " 2px solid #117c6f",borderRadius:2, margin:4, alignItems:"center",}}>
                         <Grid container xs={12} alignItems="center">
                             <Grid container xs={4} marginLeft={3}>
                                 <Grid item>
