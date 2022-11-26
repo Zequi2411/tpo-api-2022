@@ -99,7 +99,7 @@ function Cursos() {
 
       <Grid container name="perfil" xs={3.5} sx={{ backgroundColor: "#e1f7f1", border: " 2px solid #117c6f", marginTop: 2, marginBottom: 3, }} >
         <div className='cursosPerfil'>
-          <div className='cursosPerfilFoto'><Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" /></div>
+          <div className='cursosPerfilFoto'><Avatar sx={{ width: 100, height: 100 }} alt="Remy Sharp" src="/static/images/avatar/1.jpg"/></div>
           <div><Stack direction="row" spacing={2}>
             <Button variant="contained" component="label">
               Upload
