@@ -107,7 +107,7 @@ function RegistroAlumno(){
                         required
                         fullWidth
                         id="email"
-                        label="Dirección"
+                        label="Correo"
                         name="email"
                         autoComplete="email"
                         autoFocus
