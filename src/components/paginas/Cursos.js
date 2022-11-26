@@ -23,8 +23,8 @@ function Cursos() {
           <SearchIcon />
         </Grid>
       </Grid>
-      <Grid container xs={7} justifyContent={"center"} sx={{ marginTop: 2, marginBottom: 3, }}>
-        <Grid container xs={10} sx={{ backgroundColor: "#e1f7f1", border: " 2px solid #117c6f", }} justifyContent={"center"} >
+      <Grid container xs={7} justifyContent={"center"} sx={{marginTop:2, marginBottom:3,}}>
+        <Grid container xs={10} sx={{backgroundColor: "#e1f7f1",border: " 2px solid #117c6f",}} justifyContent={"center"} >
           <Grid container xs={4} alignItems="center" direction={"column"} justifyContent={"center"}>
             <Grid item alignContent={"center"}>
               <Typography>Calificación</Typography>
