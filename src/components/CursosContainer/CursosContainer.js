@@ -17,7 +17,7 @@ import data from '../CursosSearch/mockData';
 export default function CursosContainer() {
     return (
         <Box sx={{ flexGrow: 1 }}>
-            <Grid container spacing={2} marginBottom={2}>
+            <Grid container spacing={2} margin={6} >
                 {
                     data.map(product => (
                         <Grid xs={12} sm={6} md={4} lg={3}>
