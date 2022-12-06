@@ -1,5 +1,33 @@
 import urlWebServices from '../Controller/webServices.js';
 
+export const signup= async function(signup)
+{
+    let url = urlWebServices.signup;
+    const formData = new URLSearchParams();
+    formData.append('email', signup.email);
+    formData.append('password', signup.password);
+    //console.log("dato",formData);
+    console.log("url",url);
+    try
+    {
+        let response = await fetch(url,{
+            method: 'POST', // or 'PUT'
+            mode: "cors",
+            headers:{
+                'Accept':'application/x-www-form-urlencoded',
+               // 'x-access-token': WebToken.webToken,
+                'Origin':'http://localhost:3000',
+                'Content-Type': 'application/x-www-form-urlencoded'},
+            body: formData,
+            
+        });
+    }
+    catch(error)
+    {
+        console.log("error",error);
+    };
+}
+
 export const login= async function(login)
 {
     //url webservices

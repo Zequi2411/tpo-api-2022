@@ -15,6 +15,7 @@ import {useLocation} from 'wouter';
 
 //importo llamada a endpoint
 import {login} from '../Controller/miApp.controller'
+import { Navigate } from 'react-router';
 
 const theme = createTheme();
 
@@ -75,8 +76,7 @@ function Login() {
   }  
   const redirect= ()=>{
     if (usuarioValido) {
-
-      return redirect("/");
+      return <Navigate to='/' />
     }
     
 
@@ -84,11 +84,14 @@ function Login() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    navigate('/')
+    if (usuarioValido) {
+      return <Navigate to='/' />
+    }
   };
 
   return (
     <ThemeProvider theme={theme}>
+      {redirect}
       <Container component="main" maxWidth="xs" style={{ height:"500px" }}>
         <CssBaseline />
         <Box
