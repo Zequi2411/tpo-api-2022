@@ -15,7 +15,7 @@ import {useLocation} from 'wouter';
 
 //importo llamada a endpoint
 import {login} from '../Controller/miApp.controller'
-import { Navigate } from 'react-router';
+import { Navigate, useNavigate } from 'react-router';
 
 const theme = createTheme();
 
@@ -23,8 +23,9 @@ function Login() {
   const [cardAnimaton, setCardAnimation] = React.useState("cardHidden");
   const [email,setEmail]=React.useState('');
   const [password,setPassword]=React.useState('');
-  const [, navigate] = useLocation()
+  //const [, navigate] = useLocation()
   const [usuarioValido,setUsuarioValido]=React.useState(false);
+  const navigate = useNavigate();
   
   setTimeout(function() {
     setCardAnimation("");
@@ -74,9 +75,10 @@ function Login() {
     
     
   }  
-  const redirect= ()=>{
+  const handleClick= ()=>{
+    loginUser();
     if (usuarioValido) {
-      return <Navigate to='/' />
+      navigate("/");
     }
     
 
@@ -84,14 +86,10 @@ function Login() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (usuarioValido) {
-      return <Navigate to='/' />
-    }
   };
 
   return (
     <ThemeProvider theme={theme}>
-      {redirect}
       <Container component="main" maxWidth="xs" style={{ height:"500px" }}>
         <CssBaseline />
         <Box
@@ -139,7 +137,7 @@ function Login() {
               fullWidth
               variant="contained"
               sx={{ mt: 3, mb: 2 }}
-              onClick={loginUser}
+              onClick={handleClick}
             >
               Ingresar
             </Button>
