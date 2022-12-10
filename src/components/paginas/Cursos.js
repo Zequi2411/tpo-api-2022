@@ -6,11 +6,51 @@ import Rating from '@mui/material/Rating';
 import Divider from '@mui/material/Divider';
 import TextField from '@mui/material/TextField';
 
+
+
 function Cursos() {
   const [value, setValue] = React.useState();
+  const [resultsList, setResultsList] = React.useState([
+    {
+      title: "Inglés americano",
+      materia: "Inglés",
+      profesor: "Julieta",
+      ubicacion: "Buenos Aires",
+      tipo: "Grupal",
+      frecuencia: "Semanal",
+      price: "$20000",
+      image: "/images/idiomas.jpg",
+      description: "Es mi idioma preferido , después del castellano. Con estás clases intento Lograr independencia económica y de cargas horarias. Cambiar la profesión",
+      rating: 0,
+    },
+    {
+      title: "Inglés americano",
+      materia: "Inglés",
+      profesor: "Julieta",
+      ubicacion: "Buenos Aires",
+      tipo: "Grupal",
+      frecuencia: "Semanal",
+      price: "$20000",
+      image: "/images/idiomas.jpg",
+      description: "Es mi idioma preferido , después del castellano. Con estás clases intento Lograr independencia económica y de cargas horarias. Cambiar la profesión",
+      rating: 0,
+    },
+    {
+      title: "Inglés americano",
+      materia: "Inglés",
+      profesor: "Julieta",
+      ubicacion: "Buenos Aires",
+      tipo: "Grupal",
+      frecuencia: "Semanal",
+      price: "$20000",
+      image: "/images/idiomas.jpg",
+      description: "Es mi idioma preferido , después del castellano. Con estás clases intento Lograr independencia económica y de cargas horarias. Cambiar la profesión",
+      rating: 0,
+    }
+  ]);
   
   return (
-    <Grid container>
+    <Grid container >
       <Grid container xs={12} alignItems="center" sx={{marginTop:2, marginLeft:6, marginBottom:2,}}>
         <Grid item>
           <Button href="/buscarcurso">Buscar Clases</Button>
@@ -19,7 +59,10 @@ function Cursos() {
           <SearchIcon />
         </Grid>
       </Grid>
-      <Grid container xs={7} justifyContent={"center"} sx={{marginTop:2, marginBottom:3,}}>
+      <Grid container xs={12} >
+      <Grid container xs={7}>
+      {resultsList.map((singleResult, index) => (
+      <Grid container xs={12} justifyContent={"center"} sx={{marginTop:2, marginBottom:3,}}>
         <Grid container xs={10} sx={{backgroundColor: "#e1f7f1",border: " 2px solid #117c6f", borderRadius:2}} justifyContent={"center"} >
           <Grid container xs={4} alignItems="center" direction={"column"} justifyContent={"center"}>
             <Grid item alignContent={"center"}>
@@ -28,7 +71,7 @@ function Cursos() {
             <Grid item alignItems={"center"}>
               <Rating
                 name="calificacion"
-                value={value}
+                value={singleResult.rating}
                 onChange={(event, newValue) => {
                   setValue(newValue);
                 }}
@@ -38,7 +81,7 @@ function Cursos() {
           <Grid container xs={8} direction={"column"}>
             <Grid container xs={12} sx={{marginBottom:2}}>
               <Grid item xs={12} sx={{marginBottom:1}}>
-                <Typography variant="h5">Texto ejemplo. Vamos Argentina Todavia</Typography>
+                <Typography variant="h5">{singleResult.title}</Typography>
               </Grid>
               <Grid item xs={12} sx={{marginRight:6}}>
                 <Divider />
@@ -50,16 +93,16 @@ function Cursos() {
                   <Typography>Horario:</Typography>
                 </Grid>
                 <Grid item xs={12}>
-                  <Typography>Dias:</Typography>
+                  <Typography>Días:</Typography>
                 </Grid>
                 <Grid item xs={12}>
-                  <Typography>Frecuencia:</Typography>
+                  <Typography>Frecuencia: {singleResult.frecuencia}</Typography>
                 </Grid>
                 <Grid item xs={12}>
-                  <Typography>Tipo:</Typography>
+                  <Typography>Tipo: {singleResult.tipo}</Typography>
                 </Grid>
                 <Grid item xs={12}>
-                  <Typography>Costo:</Typography>
+                  <Typography>Costo: {singleResult.price}</Typography>
                 </Grid>
                 <Grid item xs={12}>
                   <Typography>Estado:</Typography>
@@ -92,11 +135,14 @@ function Cursos() {
           </Grid>
         </Grid>
       </Grid>
-      <Grid container name="perfil" xs={3.5} sx={{backgroundColor: "#e1f7f1",border: " 2px solid #117c6f", marginTop:2, marginBottom:3,}} >
+      ))}
+      </Grid>
+      <Grid container name="perfil" xs={5} alignItems={"flex-start"} sx={{backgroundColor: "#e1f7f1",border: " 2px solid #117c6f", marginTop:2, marginBottom:3, height:"700px"}} >
 
       </Grid>
     
-
+  
+    </Grid>
     </Grid>
   )
 }
