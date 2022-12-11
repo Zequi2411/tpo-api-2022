@@ -5,6 +5,12 @@ import SearchIcon from '@mui/icons-material/Search';
 import Rating from '@mui/material/Rating';
 import Divider from '@mui/material/Divider';
 import TextField from '@mui/material/TextField';
+import Avatar from '@mui/material/Avatar';
+import Stack from '@mui/material/Stack';
+import IconButton from '@mui/material/IconButton';
+import PhotoCamera from '@mui/icons-material/PhotoCamera';
+
+
 
 
 
@@ -83,13 +89,13 @@ function Cursos() {
               <Grid item xs={12} sx={{marginBottom:1}}>
                 <Typography variant="h5">{singleResult.title}</Typography>
               </Grid>
-              <Grid item xs={12} sx={{marginRight:6}}>
+              <Grid item xs={12} sx={{ marginRight: 6 }}>
                 <Divider />
-              </Grid> 
+              </Grid>
             </Grid>
             <Grid container xs={12}>
               <Grid container xs={3} direction="column">
-                 <Grid item xs={12}>
+                <Grid item xs={12}>
                   <Typography>Horario:</Typography>
                 </Grid>
                 <Grid item xs={12}>
@@ -110,7 +116,7 @@ function Cursos() {
               </Grid>
               <Grid container xs={7} justifyContent="center" alignItems="center" direction={"column"}>
                 <Grid item alignContent={"center"} >
-                  <Typography>Comentario</Typography>                  
+                  <Typography>Comentario</Typography>
                 </Grid>
                 <Grid item xs={12} alignItems={"center"}>
                   <TextField
@@ -128,9 +134,9 @@ function Cursos() {
               </Grid>
             </Grid>
             <Grid container xs={12} justifyContent={"center"} marginLeft={5} marginBottom={2}>
-                <Grid item alignItems={"center"}>
-                  <Button>Finalizar</Button>
-                </Grid>
+              <Grid item alignItems={"center"}>
+                <Button>Finalizar</Button>
+              </Grid>
             </Grid>
           </Grid>
         </Grid>
@@ -139,6 +145,23 @@ function Cursos() {
       </Grid>
       <Grid container name="perfil" xs={5} alignItems={"flex-start"} sx={{backgroundColor: "#e1f7f1",border: " 2px solid #117c6f", marginTop:2, marginBottom:3, height:"700px"}} >
 
+      <Grid container name="perfil" xs={3.5} sx={{ backgroundColor: "#e1f7f1", border: " 2px solid #117c6f", marginTop: 2, marginBottom: 3, }} >
+        <div className='cursosPerfil'>
+          <div className='cursosPerfilFoto'><Avatar sx={{ width: 100, height: 100 }} alt="Remy Sharp" src="/static/images/avatar/1.jpg"/></div>
+          <div><Stack direction="row" spacing={2}>
+            <Button variant="contained" component="label">
+              Upload
+              <input hidden accept="image/*" multiple type="file" />
+            </Button>
+            <IconButton color="primary" aria-label="upload picture" component="label">
+              <input hidden accept="image/*" type="file" />
+              <PhotoCamera />
+            </IconButton>
+          </Stack></div>
+          <div>Nombre: *nombre*</div>
+          <div>Correo: *email*</div>
+          <div>Telefono: *telefono*</div>
+        </div>
       </Grid>
     
   
