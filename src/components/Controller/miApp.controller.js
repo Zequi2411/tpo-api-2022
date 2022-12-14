@@ -6,6 +6,12 @@ export const signup= async function(signup)
     const formData = new URLSearchParams();
     formData.append('email', signup.email);
     formData.append('password', signup.password);
+    formData.append('nombre', signup.nombre);
+    formData.append('apellido', signup.apellido);
+    formData.append('telefono', signup.telefono);
+    formData.append('pregunta', signup.pregunta);
+    formData.append('respuesta', signup.respuesta);
+    formData.append('nacimiento', signup.nacimiento);
     //console.log("dato",formData);
     console.log("url",url);
     try
