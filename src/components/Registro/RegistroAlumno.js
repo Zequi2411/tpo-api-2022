@@ -45,7 +45,6 @@ function RegistroAlumno() {
     const [pregunta, setPregunta] = React.useState('hola');
     const [respuesta, setRespuesta] = React.useState('');
     const [nacimiento, setNacimiento] = React.useState('');
-    const [pedrito, setPedrito] = React.useState('');
     const [usuarioValido, setUsuarioValido] = React.useState(false);
     const navigate = useNavigate();
 
