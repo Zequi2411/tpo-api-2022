@@ -143,9 +143,8 @@ function Cursos() {
       </Grid>
       ))}
       </Grid>
-      <Grid container name="perfil" xs={5} alignItems={"flex-start"} sx={{backgroundColor: "#e1f7f1",border: " 2px solid #117c6f", marginTop:2, marginBottom:3, height:"700px"}} >
 
-      <Grid container name="perfil" xs={3.5} sx={{ backgroundColor: "#e1f7f1", border: " 2px solid #117c6f", marginTop: 2, marginBottom: 3, }} >
+      <Grid container name="perfil" xs={3.5} sx={{ backgroundColor: "#e1f7f1", border: " 2px solid #117c6f", marginTop: 2, marginBottom: 3, maxHeight:"400px" }} >
         <div className='cursosPerfil'>
           <div className='cursosPerfilFoto'><Avatar sx={{ width: 100, height: 100 }} alt="Remy Sharp" src="/static/images/avatar/1.jpg"/></div>
           <div><Stack direction="row" spacing={2}>
