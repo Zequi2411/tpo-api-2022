@@ -62,7 +62,9 @@ function CrearCursos() {
 
     console.log(nombremateria);
 
-    console.log.apply(horainicio)
+    console.log.apply(horainicio);
+
+    manejarEnvioDeFormulario();
 
   };
 
@@ -151,14 +153,24 @@ function CrearCursos() {
     },
   ]
 
-  const manejarEnvioDeFormulario = async function (evento) {
+  const manejarEnvioDeFormulario = async function () {
 
-    evento.preventDefault();
-    // Codificar nuestro videojuego como JSON
+    // Codificar nuestro curso como JSON
+    let datos = {
+      nombre: nombrecurso,
+      materia: nombremateria,
+      //horaInicio: horaInicio,
+      //horaFin: horaFin,
+      tipo: tipoClase,
+      frecuencia: tipoFrecuencia,
+      //precio: precio,
+      calificacion: 0
+    }
 
-    const cargaUtil = JSON.stringify(this.state.curso);
+    const cargaUtil = JSON.stringify(datos);
+    console.log(cargaUtil)
     // ¡Y enviarlo!
-    const respuesta = await fetch(`${Constantes.RUTA_API}`, {
+    const respuesta = await fetch("http://localhost:4000/cursos", {
       method: "POST",
       body: cargaUtil,
       headers: {
@@ -175,13 +187,6 @@ function CrearCursos() {
         pauseOnHover: true,
         draggable: true,
         progress: undefined,
-      });
-      this.setState({
-        curso: {
-          nombre: "",
-          precio: "",
-          calificacion: "",
-        }
       });
     } else {
       toast.error("Error guardando. Intenta de nuevo");
@@ -355,7 +360,6 @@ function CrearCursos() {
             <Grid container spacing={2} sx={{ mt: 1 }}>
               <Grid item xs={12} sm={4} sx={{ mt: 2 }} >
                 <Button
-                  onClick={manejarEnvioDeFormulario}
                   type="submit"
                   fullWidth
                   variant="contained"
