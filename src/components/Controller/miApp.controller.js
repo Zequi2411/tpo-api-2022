@@ -6,6 +6,12 @@ export const signup= async function(signup)
     const formData = new URLSearchParams();
     formData.append('email', signup.email);
     formData.append('password', signup.password);
+    formData.append('nombre', signup.nombre);
+    formData.append('apellido', signup.apellido);
+    formData.append('telefono', signup.telefono);
+    formData.append('pregunta', signup.pregunta);
+    formData.append('respuesta', signup.respuesta);
+    formData.append('nacimiento', signup.nacimiento);
     //console.log("dato",formData);
     console.log("url",url);
     try
@@ -21,12 +27,35 @@ export const signup= async function(signup)
             body: formData,
             
         });
-    }
-    catch(error)
-    {
-        console.log("error",error);
+
+        localStorage.setItem("email", signup.email);
+        localStorage.setItem("nombre", signup.nombre);
+        localStorage.setItem("apellido", signup.apellido);
+        localStorage.setItem("telefono", signup.telefono);
+        let rdo = response.status;
+        let data = await response.json();
+        localStorage.setItem("id", data.user.id);
+        switch (rdo) {
+          case 200: {
+            localStorage.setItem("x", data.token);
+            //guardo usuario logueado
+            let user = data.user;
+            localStorage.setItem("email", user.email);
+            return { rdo: 0, mensaje: "Ok" }; //correcto
+          }
+          case 422: {
+            //error general
+            return { rdo: 1, mensaje: "El mail ingresado ya está en uso" };
+          }
+          default: {
+            //otro error
+            return { rdo: 1, mensaje: "Ha ocurrido un error" };
+          }
+        }
+      } catch (error) {
+        console.log("error", error);
+      }
     };
-}
 
 export const login= async function(login)
 {
