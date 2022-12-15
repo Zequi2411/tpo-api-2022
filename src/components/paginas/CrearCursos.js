@@ -170,15 +170,26 @@ function CrearCursos() {
     const cargaUtil = JSON.stringify(datos);
     console.log(cargaUtil)
     // ¡Y enviarlo!
-    const respuesta = await fetch("http://localhost:4000/cursos", {
-      method: "POST",
-      body: cargaUtil,
+    let response = await fetch('http://localhost:4000/cursos', {
+      method: 'POST', // or 'PUT'
+      mode: "cors",
       headers: {
-        "Content-Type": "application/json",
-      }
+        'Accept': 'application/x-www-form-urlencoded',
+        // 'x-access-token': WebToken.webToken,
+        'Origin': 'http://localhost:3000',
+        'Content-Type': 'application/x-www-form-urlencoded'
+      },
+      body: cargaUtil,
+
     });
-    const exitoso = await respuesta.json();
-    if (exitoso) {
+
+    let rdo = response.status;
+    console.log("response", response);
+    let data = await response.json();
+    console.log("jsonresponse", data);
+
+    //const exitoso = await respuesta.json();
+    if (rdo) {
       toast('Curso guardado exitosamente', {
         position: "top-left",
         autoClose: 2000,
