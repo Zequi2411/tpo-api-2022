@@ -170,7 +170,7 @@ function CrearCursos() {
     const cargaUtil = JSON.stringify(datos);
     console.log(cargaUtil)
     // ¡Y enviarlo!
-    let response = await fetch('http://localhost:4000/cursos', {
+    let response = await fetch('http://localhost:4000/cursos/agregarCurso', {
       method: 'POST', // or 'PUT'
       mode: "cors",
       headers: {

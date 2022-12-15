@@ -27,12 +27,35 @@ export const signup= async function(signup)
             body: formData,
             
         });
-    }
-    catch(error)
-    {
-        console.log("error",error);
+
+        localStorage.setItem("email", signup.email);
+        localStorage.setItem("nombre", signup.nombre);
+        localStorage.setItem("apellido", signup.apellido);
+        localStorage.setItem("telefono", signup.telefono);
+        let rdo = response.status;
+        let data = await response.json();
+        localStorage.setItem("id", data.user.id);
+        switch (rdo) {
+          case 200: {
+            localStorage.setItem("x", data.token);
+            //guardo usuario logueado
+            let user = data.user;
+            localStorage.setItem("email", user.email);
+            return { rdo: 0, mensaje: "Ok" }; //correcto
+          }
+          case 422: {
+            //error general
+            return { rdo: 1, mensaje: "El mail ingresado ya está en uso" };
+          }
+          default: {
+            //otro error
+            return { rdo: 1, mensaje: "Ha ocurrido un error" };
+          }
+        }
+      } catch (error) {
+        console.log("error", error);
+      }
     };
-}
 
 export const login= async function(login)
 {

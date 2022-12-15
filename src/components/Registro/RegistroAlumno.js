@@ -13,7 +13,7 @@ import Autocomplete from '@mui/material/Autocomplete';
 //import { useState } from 'react';
 import MenuItem from '@mui/material/MenuItem';
 import { signup } from '../Controller/miApp.controller';
-import { useNavigate } from 'react-router';
+import { Navigate, useNavigate } from 'react-router';
 
 const carreras = [
     {
@@ -101,25 +101,34 @@ function RegistroAlumno() {
 
     //Valido campos y llamo endpoint
     const signupUser = () => {
-        if (email !== "" && password !== "") {
+        if (
+            (nombre !== "" && password !== "",
+            apellido !== "",
+            email !== "" && telefono !== "",
+            pregunta !== "" && respuesta !== "")
+          ) {
             validarSignup();
-        }
-        else {
-            alert("Debe completar usuario y password");
-        }
+          } else {
+            alert("Alguno de los campos esta vacio");
+          }
     }
 
-    const handleClick = () => {
+    /* const handleClick = () => {
         signupUser();
         if (usuarioValido) {
             navigate("/");
         }
-    }
+    } */
 
-
+    const redirect = () => {
+        if (usuarioValido) {
+          return <Navigate to="/" />;
+        }
+      };
 
     return (
         <ThemeProvider theme={theme}>
+            {redirect()}
             <Container component="main" maxWidth="1920px" sx={{ marginBottom: 8 }}>
                 <CssBaseline />
                 <Box
@@ -279,7 +288,7 @@ function RegistroAlumno() {
                             fullWidth
                             variant="contained"
                             sx={{ mt: 3, mb: 2 }}
-                            onClick={handleClick}
+                            onClick={signupUser}
                         >
                             Crear Cuenta
                         </Button>
