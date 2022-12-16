@@ -65,10 +65,17 @@ Se deberan ejecutar los siguientes comandos tanto para el Backend como el Fronte
 
 ```
 > npm install
+> npm install -g nodemon
 ```
 
-### 2) Levantar el servidor de manera loccal.
+### 2) Levantar el servidor de manera local.
 
+Para el Frontend:
 ```
 > npm start
+```
+
+Para el Backend:
+```
+> nodemon app.js
 ```
