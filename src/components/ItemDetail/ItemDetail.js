@@ -35,7 +35,7 @@ const ItemDetail = ({ Item }) => {
                             </Grid>
                             <Grid item>
                                 <Typography variant='body2'>
-                                    Clases Particulares de Ingles
+                                    
                                 </Typography>
                             </Grid>
                         </Grid>
@@ -48,19 +48,7 @@ const ItemDetail = ({ Item }) => {
                                 </Grid>
                                 <Grid item>
                                     <Typography variant='body2'>
-                                        Primario
-                                    </Typography>
-                                </Grid>
-                            </Grid>
-                            <Grid container direction={"row"} spacing={0.5}>
-                                <Grid item>
-                                    <Typography variant='body2' fontWeight={"bold"}>
-                                        Nivel: 
-                                    </Typography>
-                                </Grid>
-                                <Grid item>
-                                    <Typography variant='body2'>
-                                        Medio
+                                        
                                     </Typography>
                                 </Grid>
                             </Grid>
@@ -72,7 +60,7 @@ const ItemDetail = ({ Item }) => {
                                 </Grid>
                                 <Grid item>
                                     <Typography variant='body2'>
-                                        18.30 a 20.30
+                                        
                                     </Typography>
                                 </Grid>
                             </Grid>
@@ -127,7 +115,7 @@ const ItemDetail = ({ Item }) => {
                                     <Typography>{Item.profesor}</Typography>
                                 </Grid>
                                 <Grid item margin={1}>
-                                    <Typography>hola que tal todo el mundo</Typography>
+                                    <Typography></Typography>
                                 </Grid>
                             </Grid>
                             <Grid container xs={4} alignItems={"center"} justifyContent={"center"}>
