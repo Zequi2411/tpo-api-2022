@@ -73,6 +73,13 @@ function RegistroAlumno() {
         });
     };
 
+    const handleChange1 = (event) => {
+        setPregunta(event.target.value);
+    }
+
+    const handleChange2 = (event) => {
+        setNivelAcademico(event.target.value);
+    }
     /* const handleEmail = (event) => {
         setEmail(event.target.value);
     }
@@ -227,11 +234,11 @@ function RegistroAlumno() {
                                     required
                                     fullWidth
                                     select
+                                    value={pregunta}
+                                    onChange={handleChange1}
                                     id="pregunta"
                                     name="pregunta"
                                     type="Select"
-                                // value={nombrecurso}
-                                // onChange={(e) => setNombreCurso(e.target.value)}
                                 >
                                     {opciones.map((option) => (
                                         <MenuItem key={option.value} value={option.value} onChange={(e) => setPregunta(e.target.value)}>
@@ -264,8 +271,8 @@ function RegistroAlumno() {
                                     id="nivelAcademico"
                                     name="nivelAcademico"
                                     type="Select"
-                                // value={nombrecurso}
-                                // onChange={(e) => setNombreCurso(e.target.value)}
+                                    onChange={handleChange2}
+                                    value={nivelAcademico}
                                 >
                                     {carreras.map((option) => (
                                         <MenuItem key={option.value} value={option.value} onChange={(e) => setNivelAcademico(e.target.value)}>

@@ -7,7 +7,6 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Grid from '@mui/material/Grid';
-import Autocomplete from '@mui/material/Autocomplete';
 import Checkbox from '@mui/material/Checkbox';
 import FormGroup from '@mui/material/FormGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
@@ -30,18 +29,35 @@ function CrearCursos() {
 
   //const handleChange = (event, value) => setHoraInicio(value);
 
-  const handleChange = (event) => {
+  const handleChange1 = (event) => {
     setClase(event.target.value);
+  };
+
+  const handleChange2 = (event) => {
     setFrecuencia(event.target.value);
+  };
+
+  const handleChange3 = (event) => {
+    setHoraInicio(event.target.value);
+  };
+
+  const handleChange4 = (event) => {
+    setHoraFin(event.target.value);
+  };
+
+  const handleChange5 = (event) => {
+    setDias(event.target.value);
   };
 
   const [horaFin, setHoraFin] = useState('');
 
-  const [lunes, setLunes] = useState('');
+  const [dias, setDias] = useState('');
 
-  const [tipoClase, setClase] = useState();
+  const [tipoClase, setClase] = useState('');
 
-  const [tipoFrecuencia, setFrecuencia] = useState();
+  const [tipoFrecuencia, setFrecuencia] = useState('');
+
+  const [costo, setCosto] = useState('');
 
 
 
@@ -70,61 +86,242 @@ function CrearCursos() {
 
 
   const opcionesinicio = [
-    { hora: '8:00' },
-    { hora: '8:30' },
-    { hora: '9:00' },
-    { hora: '9:30' },
-    { hora: '10:00' },
-    { hora: '10:30' },
-    { hora: '11:00' },
-    { hora: '11:30' },
-    { hora: '12:00' },
-    { hora: '12:30' },
-    { hora: '13:00' },
-    { hora: '13:30' },
-    { hora: '14:00' },
-    { hora: '14:30' },
-    { hora: '15:00' },
-    { hora: '15:30' },
-    { hora: '16:00' },
-    { hora: '16:30' },
-    { hora: '17:00' },
-    { hora: '17:30' },
-    { hora: '18:00' },
-    { hora: '18:30' },
-    { hora: '19:00' },
-    { hora: '19:30' },
-    { hora: '20:00' },
-    { hora: '20:30' },
+    {
+      value: '8:00',
+      label: '8:00'
+    },
+    {
+      value: '8:30',
+      label: '8:30'
+    },
+    {
+      value: '9:00',
+      label: '9:00'
+    },
+    // {
+    //   value: '9:30',
+    //   label: '9:30'
+    // },
+    // {
+    //   value: '10:00',
+    //   label: '10:00'
+    // },
+    // {
+    //   value: '10:30',
+    //   label: '10:30'
+    // },
+    // {
+    //   value: '11:30',
+    //   label: '11:30'
+    // },
+    // {
+    //   value: '12:00',
+    //   label: '12:00'
+    // },
+    // {
+    //   value: '12:30',
+    //   label: '12:30'
+    // },
+    // {
+    //   value: '13:00',
+    //   label: '13:00'
+    // },
+    // {
+    //   value: '13:30',
+    //   label: '13:30'
+    // },
+    // {
+    //   value: '14:00',
+    //   label: '14:00'
+    // },
+    // {
+    //   value: '14:30',
+    //   label: '14:30'
+    // },
+    // {
+    //   value: '15:00',
+    //   label: '15:00'
+    // },
+    // {
+    //   value: '15:30',
+    //   label: '15:30'
+    // },
+    // {
+    //   value: '16:00',
+    //   label: '16:00'
+    // },
+    // {
+    //   value: '16:30',
+    //   label: '16:30'
+    // },
+    // {
+    //   value: '17:00',
+    //   label: '17:00'
+    // },
+    // {
+    //   value: '17:30',
+    //   label: '17:30'
+    // },
+    // {
+    //   value: '18:00',
+    //   label: '18:00'
+    // },
+
+    // {
+    //   value: '18:30',
+    //   label: '18:30'
+    // },
+    // {
+    //   value: '19:00',
+    //   label: '19:00'
+    // },
+    // {
+    //   value: '19:30',
+    //   label: '19:30'
+    // },
+    // {
+    //   value: '20:00',
+    //   label: '20:00'
+    // },
+    // {
+    //   value: '20:30',
+    //   label: '20:30'
+    // },
   ]
 
   const opcionesfin = [
-    { hora: '8:30' },
-    { hora: '9:00' },
-    { hora: '9:30' },
-    { hora: '10:00' },
-    { hora: '10:30' },
-    { hora: '11:00' },
-    { hora: '11:30' },
-    { hora: '12:00' },
-    { hora: '12:30' },
-    { hora: '13:00' },
-    { hora: '13:30' },
-    { hora: '14:00' },
-    { hora: '14:30' },
-    { hora: '15:00' },
-    { hora: '15:30' },
-    { hora: '16:00' },
-    { hora: '16:30' },
-    { hora: '17:00' },
-    { hora: '17:30' },
-    { hora: '18:00' },
-    { hora: '18:30' },
-    { hora: '19:00' },
-    { hora: '19:30' },
-    { hora: '20:00' },
-    { hora: '20:30' },
-    { hora: '21:00' },
+    {
+      value: '8:30',
+      label: '8:30'
+    },
+    {
+      value: '9:00',
+      label: '9:00'
+    },
+    {
+      value: '9:30',
+      label: '9:30'
+    },
+    {
+      value: '10:00',
+      label: '10:00'
+    },
+    {
+      value: '10:30',
+      label: '10:30'
+    },
+    {
+      value: '11:30',
+      label: '11:30'
+    },
+    {
+      value: '12:00',
+      label: '12:00'
+    },
+    {
+      value: '12:30',
+      label: '12:30'
+    },
+    {
+      value: '13:00',
+      label: '13:00'
+    },
+    {
+      value: '13:30',
+      label: '13:30'
+    },
+    {
+      value: '14:00',
+      label: '14:00'
+    },
+    {
+      value: '14:30',
+      label: '14:30'
+    },
+    {
+      value: '15:00',
+      label: '15:00'
+    },
+    {
+      value: '15:30',
+      label: '15:30'
+    },
+    {
+      value: '16:00',
+      label: '16:00'
+    },
+    {
+      value: '16:30',
+      label: '16:30'
+    },
+    {
+      value: '17:00',
+      label: '17:00'
+    },
+    {
+      value: '17:30',
+      label: '17:30'
+    },
+    {
+      value: '18:00',
+      label: '18:00'
+    },
+
+    {
+      value: '18:30',
+      label: '18:30'
+    },
+    {
+      value: '19:00',
+      label: '19:00'
+    },
+    {
+      value: '19:30',
+      label: '19:30'
+    },
+    {
+      value: '20:00',
+      label: '20:00'
+    },
+    {
+      value: '20:30',
+      label: '20:30'
+    },
+    {
+      value: '21:00',
+      label: '21:00'
+    },
+  ]
+
+  const Dias = [
+    {
+      value:'Lunes',
+      label:'Lunes'
+    },
+    {
+      value:'Martes',
+      label:'Martes'
+    },
+    {
+      value:'Miercoles',
+      label:'Miercoles'
+    },
+    {
+      value:'Jueves',
+      label:'Jueves'
+    },
+    {
+      value:'Viernes',
+      label:'Viernes'
+    },
+    {
+      value:'Sabado',
+      label:'Sabado'
+    },
+    {
+      value:'Domingo',
+      label:'Domingo'
+    },
   ]
 
   const Clases = [
@@ -161,6 +358,10 @@ function CrearCursos() {
     formData.append("materia", nombremateria);
     formData.append("tipo", tipoClase);
     formData.append("frecuencia", tipoFrecuencia);
+    formData.append("horainicio", horainicio);
+    formData.append("horaFin", horaFin);
+    formData.append("costo", costo);
+    formData.append("dias", dias);
 
     console.log(formData);
 
@@ -245,32 +446,36 @@ function CrearCursos() {
 
             <Grid container spacing={2} sx={{ mt: 1 }}>
               <Grid item xs={12} sm={6}>
-                <Autocomplete
-                  disablePortal
-                  id="horarioinicio"
-                  options={opcionesinicio}
-                  margin="normal"
-                  required
-                  fullWidth
-                  getOptionLabel={(option) => option.hora}
-                  onChange={handleChange}
-                  filterSelectedOptions
-                  renderInput={(params) => <TextField {...params} label="Horario de Inicio" />}
-                />
+              <TextField
+                id="horainicio"
+                select
+                label="Seleccione la Hora de Inicio"
+                value={horainicio}
+                onChange={handleChange3}
+                fullWidth
+              >
+                {opcionesinicio.map((option) => (
+                  <MenuItem key={option.value} value={option.value}>
+                    {option.label}
+                  </MenuItem>
+                ))}
+              </TextField>
               </Grid>
               <Grid item xs={12} sm={6}>
-                <Autocomplete
-                  disablePortal
-                  id="horariofin"
-                  options={opcionesfin}
-                  margin="normal"
-                  required
-                  fullWidth
-                  getOptionLabel={(option) => option.hora}
-                  onChange={handleChange}
-                  filterSelectedOptions
-                  renderInput={(params) => <TextField {...params} label="Horario de Fin" />}
-                />
+              <TextField
+                id="horafin"
+                select
+                label="Seleccione la Hora de Fin"
+                value={horaFin}
+                onChange={handleChange4}
+                fullWidth
+              >
+                {opcionesfin.map((option) => (
+                  <MenuItem key={option.value} value={option.value}>
+                    {option.label}
+                  </MenuItem>
+                ))}
+              </TextField>
               </Grid>
             </Grid>
             <Grid container spacing={2} sx={{ mt: 1 }}>
@@ -279,11 +484,11 @@ function CrearCursos() {
                   select
                   fullWidth
                   value={tipoClase}
-                  onChange={handleChange}
+                  onChange={handleChange1}
                   label="Seleccione el Tipo de Clase"
                 >
                   {Clases.map((option) => (
-                    <MenuItem key={option.value} value={option.value}>
+                    <MenuItem key={option.value} value={option.value} onChange={(e) => setClase(e.target.value)}>
                       {option.label}
                     </MenuItem>
                   ))}
@@ -294,11 +499,11 @@ function CrearCursos() {
                   select
                   fullWidth
                   value={tipoFrecuencia}
-                  onChange={handleChange}
+                  onChange={handleChange2}
                   label="Seleccione la Frecuencia"
                 >
                   {Frecuencias.map((option) => (
-                    <MenuItem key={option.value} value={option.value}>
+                    <MenuItem key={option.value} value={option.value} onChange={(e) => setFrecuencia(e.target.value)}>
                       {option.label}
                     </MenuItem>
                   ))}
@@ -307,41 +512,23 @@ function CrearCursos() {
             </Grid>
 
             <Grid container spacing={2} sx={{ mt: 1 }}>
-              <Grid item xs={12} sm={2}>
-                <FormGroup>
-                  <FormControlLabel control={<Checkbox />} label="lun" />
-                </FormGroup>
+              <Grid item xs={12}>
+              <TextField
+                id="dia"
+                select
+                label="Seleccione el Día o los Días de Cursada"
+                value={dias}
+                onChange={handleChange5}
+                fullWidth
+              >
+                {Dias.map((option) => (
+                  <MenuItem key={option.value} value={option.value}>
+                    {option.label}
+                  </MenuItem>
+                ))}
+              </TextField>
               </Grid>
-              <Grid item xs={12} sm={2}>
-                <FormGroup>
-                  <FormControlLabel control={<Checkbox />} label="mar" />
-                </FormGroup>
-              </Grid>
-              <Grid item xs={12} sm={2}>
-                <FormGroup>
-                  <FormControlLabel control={<Checkbox />} label="mie" />
-                </FormGroup>
-              </Grid>
-              <Grid item xs={12} sm={2}>
-                <FormGroup>
-                  <FormControlLabel control={<Checkbox />} label="jue" />
-                </FormGroup>
-              </Grid>
-              <Grid item xs={12} sm={2}>
-                <FormGroup>
-                  <FormControlLabel control={<Checkbox />} label="vie" />
-                </FormGroup>
-              </Grid>
-              <Grid item xs={12} sm={2}>
-                <FormGroup>
-                  <FormControlLabel control={<Checkbox />} label="sab" />
-                </FormGroup>
-              </Grid>
-              <Grid item xs={12} sm={2}>
-                <FormGroup>
-                  <FormControlLabel control={<Checkbox />} label="dom" />
-                </FormGroup>
-              </Grid>
+              
             </Grid>
 
             <Grid container spacing={2} sx={{ mt: 1 }}>
@@ -354,6 +541,9 @@ function CrearCursos() {
                   fullWidth
                   id="costo"
                   name="costo"
+                  type="text"
+                  value={costo}
+                  onChange={(e) => setCosto(e.target.value)}
                 />
               </Grid>
             </Grid>
