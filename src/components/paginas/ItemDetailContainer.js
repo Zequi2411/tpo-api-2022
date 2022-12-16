@@ -1,4 +1,4 @@
-import data from '../CursosSearch/mockData';
+/* import data from '../CursosSearch/mockData';
 import { useEffect, useState } from "react";
 import ItemDetail from '../ItemDetail/ItemDetail';
 import { useParams } from 'react-router-dom';
@@ -28,4 +28,4 @@ const ItemDetailContainer = () => {
     )
 }
 
-export default ItemDetailContainer
+export default ItemDetailContainer */
