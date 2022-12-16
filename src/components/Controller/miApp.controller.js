@@ -2,7 +2,7 @@ import urlWebServices from '../Controller/webServices.js';
 
 export const signup= async function(signup)
 {
-    let url = urlWebServices.signupprofesor;
+    let url = urlWebServices.signup;
     const formData = new URLSearchParams();
     formData.append('email', signup.email);
     formData.append('password', signup.password);
@@ -61,7 +61,7 @@ export const signup= async function(signup)
 
     export const signupprofesor= async function(signupprofesor)
 {
-    let url = urlWebServices.signup;
+    let url = urlWebServices.signupprofesor;
     const formData = new URLSearchParams();
     formData.append('email', signupprofesor.email);
     formData.append('password', signupprofesor.password);
@@ -73,7 +73,7 @@ export const signup= async function(signup)
     formData.append('titulo', signupprofesor.titulo);
     formData.append('experiencia', signupprofesor.experiencia);
     formData.append('perfil', signupprofesor.perfil);
-    //console.log("dato",formData);
+    console.log("dato",formData);
     console.log("url",url);
     try
     {
