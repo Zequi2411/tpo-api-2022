@@ -133,16 +133,6 @@ function BuscarCurso() {
                         placeholder="Ej:Ingles, Matemática..."
                     />
                 </Grid>
-                <Grid item xs={2}>
-                    <TextField 
-                        required
-                        fullWidth
-                        id="ubicacion"
-                        label="¿Lugar de Preferencia?"
-                        name="ubicacion"
-                        placeholder="Ej:CABA, Cordoba..."
-                />
-                </Grid>
                 
                 <Grid container direction={"row"} xs={2}>
                     <Grid item xs={12}>

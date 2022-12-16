@@ -516,7 +516,8 @@ function CrearCursos() {
               <TextField
                 id="dia"
                 select
-                label="Seleccione el Día o los Días de Cursada"
+                multiple
+                label="Seleccione el Día de Cursada"
                 value={dias}
                 onChange={handleChange5}
                 fullWidth
@@ -579,6 +580,12 @@ function CrearCursos() {
         </Box>
       </Container>
     </ThemeProvider>
+/*   ) : (
+    <Grid container xs={12} height="300px" justifyContent={"center"}>
+      <Grid item>
+        <Typography variant="h3">No tiene acceso a esta página</Typography>
+      </Grid>
+    </Grid> */
   );
 }
 

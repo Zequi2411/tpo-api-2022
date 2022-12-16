@@ -154,8 +154,9 @@ export const login= async function(login)
                     localStorage.setItem("x",data.loginUser.token);
                     //guardo usuario logueado
                     let user = data.loginUser.user;
-                    localStorage.setItem("nombre",user.name);
+                    localStorage.setItem("nombre",user.nombre);
                     localStorage.setItem("email",user.email);
+                    localStorage.setItem("perfil", user.perfil);
                     
                     return ({rdo:0,mensaje:"Ok"});//correcto
                 }
