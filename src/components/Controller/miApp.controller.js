@@ -73,7 +73,7 @@ export const signup= async function(signup)
     formData.append('titulo', signupprofesor.titulo);
     formData.append('experiencia', signupprofesor.experiencia);
     formData.append('perfil', signupprofesor.perfil);
-    //console.log("dato",formData);
+    console.log("dato",formData);
     console.log("url",url);
     try
     {
