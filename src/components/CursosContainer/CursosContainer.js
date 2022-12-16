@@ -17,11 +17,11 @@ export default function CursosContainer() {
         setDatos(cursos);
         console.log(datos.data.docs);
     };
-    
+
     /* useEffect(() =>{
         mostrarCursos();
     }) */
-    
+
     mostrarCursos();
 
     return (
