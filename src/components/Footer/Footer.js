@@ -8,30 +8,11 @@ import SchoolIcon from '@mui/icons-material/School';
 function Footer() {
   return (
     <div className='footer-container'>
-      <section className='footer-subscription'>
-        <p className='footer-subscription-heading'>
-          Recibi nuestras ultimas novedades en tu correo
-        </p>
-        <p className='footer-subscription-text'>
-          Podes cancelar la suscripción en cualquier momento.
-        </p>
-        <div className='input-areas'>
-          <form>
-            <input
-              className='footer-input'
-              name='email'
-              type='email'
-              placeholder='Tu Email'
-            />
-            <Button buttonStyle='btn--outline'>Subscribite</Button>
-          </form>
-        </div>
-      </section>
       <div class='footer-links'>
         <div className='footer-link-wrapper'>
           <div class='footer-link-items'>
             <h2>About Us</h2>
-            <Link to='/sign-up'>How it works</Link>
+            <Link href='/sign-up'>How it works</Link>
           </div>
         </div>
         <div className='footer-link-wrapper'>
