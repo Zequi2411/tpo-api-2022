@@ -129,26 +129,26 @@ function CrearCursos() {
 
   const Clases = [
     {
-      value: 'ind',
+      value: 'Individual',
       label: 'Individual'
     },
     {
-      value: 'gru',
+      value: 'Grupal',
       label: 'Grupal'
     },
   ]
 
   const Frecuencias = [
     {
-      value: 'uni',
+      value: 'Única',
       label: 'Única'
     },
     {
-      value: 'sem',
+      value: 'Semanal',
       label: 'Semanal'
     },
     {
-      value: 'men',
+      value: 'Mensual',
       label: 'Mensual'
     },
   ]

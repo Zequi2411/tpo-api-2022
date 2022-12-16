@@ -11,6 +11,7 @@ export const signup= async function(signup)
     formData.append('telefono', signup.telefono);
     formData.append('pregunta', signup.pregunta);
     formData.append('respuesta', signup.respuesta);
+    formData.append('nivelAcademico', signup.nivelAcademico);
     formData.append('nacimiento', signup.nacimiento);
     //console.log("dato",formData);
     console.log("url",url);
