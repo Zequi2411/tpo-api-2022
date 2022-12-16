@@ -55,7 +55,7 @@ El Frontend y el Backend se encuentran en 2 diferentes repositorios de GitHub
 
 ### Backend:
 
-[Backend]
+[Backend] (https://github.com/Zequi2411/REST-API_2.git)
 
 ## Comandos
 
