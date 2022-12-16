@@ -9,25 +9,29 @@ import { useState, useEffect } from 'react';
 
 
 export default function CursosContainer() {
-    /* const [data, setData] = useState();
-
-
+    const [datos, setDatos] = useState();
 
     const mostrarCursos = async () => {
-        let data = await getAllCursos();
-        let json_data = await data.datos;
-        setData(json_data);
-    }; */
-
+        const respuesta = await fetch(`${"http://localhost:4000/cursos"}`);
+        const cursos = await respuesta.json();
+        setDatos(cursos);
+        console.log(datos.data.docs);
+    };
+    
+    /* useEffect(() =>{
+        mostrarCursos();
+    }) */
+    
+    mostrarCursos();
 
     return (
 
         <Box sx={{ flexGrow: 1 }}>
-            {/* {mostrarCursos()} */}
+
             <Grid container spacing={2} margin={6} >
                 {
 
-                    data.map(product => (
+                    datos.data.docs.map(product => (
                         <Grid xs={12} sm={6} md={4} lg={3}>
                             <CursoCard key={product.id}
                                 title={product.title}
