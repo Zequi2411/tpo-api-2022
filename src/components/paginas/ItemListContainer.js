@@ -1,4 +1,4 @@
-import data from '../CursosSearch/mockData';
+/* import data from '../CursosSearch/mockData';
 import { useEffect, useState } from "react";
 import { Item } from '../Item/Item';
 import '../../App.css';
@@ -46,4 +46,4 @@ const ItemListConteiner = () => {
   )
 }
 
-export default ItemListConteiner
+export default ItemListConteiner */

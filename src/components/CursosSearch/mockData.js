@@ -54,3 +54,22 @@ const data = [
     }
 ];
 export default data;
+
+/* export const getAllCursos = async function () {
+    //url webservices
+    let url = "http://localhost:4000/cursos"
+    try {
+      let response = await fetch(url, {
+        method: "GET", // or 'PUT'
+        mode: "cors",
+        headers: {
+          //Accept: "application/x-www-form-urlencoded",
+          Origin: "http://localhost:3000",
+        },
+      });
+      let data = response.json();
+      return data;
+    } catch (error) {
+      console.log("error", error);
+    }
+  }; */
