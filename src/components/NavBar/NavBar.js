@@ -25,9 +25,36 @@ function NavBar() {
 
     window.addEventListener('resize', showButton);
 
-  return (
+  return JSON.parse(localStorage.getItem("email") !== null) ?  (
     <>
         <nav className='navbar'>
+            <div className='navbar-container'>
+                <Link to='/' className='navbar-logo' onClick={closeMobileMenu}>
+                    Tusclases.com <SchoolIcon className='fab fa-typo3'></SchoolIcon>
+                </Link>
+                <div className='menu-icon' onClick={handleClick}>
+                    <i className={click ? 'fas fa-times' : 'fas fa-bars'} />
+                </div>
+                <ul className={click ? 'nav-menu active' : 'nav-menu'}>
+                    <li className='nav-item'>
+                        <Link to='/' className='nav-links' onClick={closeMobileMenu}>
+                            Inicio
+                        </Link>
+                    </li>
+                    <li className='nav-item'>
+                        <Link to='/nosotros' className='nav-links' onClick={closeMobileMenu}>
+                            Nosotros
+                        </Link>
+                    </li>
+                </ul>
+                {button && <Button buttonStyle={'btn--outline'}>Iniciar Sesión</Button>}
+            </div>
+        </nav>
+
+        <Outlet />
+    </>
+  ) : (
+    <nav className='navbar'>
             <div className='navbar-container'>
                 <Link to='/' className='navbar-logo' onClick={closeMobileMenu}>
                     Tusclases.com <SchoolIcon className='fab fa-typo3'></SchoolIcon>
@@ -56,18 +83,10 @@ function NavBar() {
                             CursosProfesor
                         </Link>
                     </li>
-                    {/* <li className='nav-item'>
-                        <Link to='/login' className='nav-links-mobile' onClick={closeMobileMenu}>
-                            Iniciar Sesión
-                        </Link>
-                    </li> */}
                 </ul>
                 {button && <Button buttonStyle={'btn--outline'}>Iniciar Sesión</Button>}
             </div>
         </nav>
-
-        <Outlet />
-    </>
   )
 }
 

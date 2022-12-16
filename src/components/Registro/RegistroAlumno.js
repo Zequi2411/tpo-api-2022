@@ -9,7 +9,6 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { Grid } from '@mui/material';
-import Autocomplete from '@mui/material/Autocomplete';
 //import { useState } from 'react';
 import MenuItem from '@mui/material/MenuItem';
 import { signup } from '../Controller/miApp.controller';
@@ -17,18 +16,24 @@ import { Navigate, useNavigate } from 'react-router';
 
 const carreras = [
     {
-        value: 'prim',
+        value: 'Primario',
         label: 'Primario',
     },
     {
-        value: 'sec',
+        value: 'Secundario',
         label: 'Secundario',
     },
     {
-        value: 'uni',
+        value: 'Universitario',
         label: 'Universitario',
     },
 ];
+
+const opciones = [
+    { value: '¿Cual es tu comida favorita?' , label: '¿Cual es tu comida favorita?' },
+    {  value: '¿Cual es tu libro favorito?' , label: '¿Cual es tu libro favorito?' },
+    {  value: '¿Cual es el nombre de tu primer mascota?' , label: '¿Cual es el nombre de tu primer mascota?' }
+]
 
 
 const theme = createTheme();
@@ -42,8 +47,9 @@ function RegistroAlumno() {
     const [nombre, setNombre] = React.useState('');
     const [apellido, setApellido] = React.useState('');
     const [telefono, setTelefono] = React.useState('');
-    const [pregunta, setPregunta] = React.useState('hola');
+    const [pregunta, setPregunta] = React.useState('');
     const [respuesta, setRespuesta] = React.useState('');
+    const [nivelAcademico, setNivelAcademico] = React.useState('');
     const [nacimiento, setNacimiento] = React.useState('');
     const [usuarioValido, setUsuarioValido] = React.useState(false);
     const navigate = useNavigate();
@@ -56,26 +62,41 @@ function RegistroAlumno() {
             apellido: data.get('apellido'),
             email: data.get('email'),
             contraseña: data.get('contraseña'),
-            respuesta: data.get('respuesta')
+            telefono: data.get('telefono'),
+            pregunta: data.get('pregunta'),
+            respuesta: data.get('respuesta'),
+            nivelAcademico: data.get('nivelAcademico'),
+            nacimiento: data.get('nacimiento')
+                 
 
         });
     };
 
-    /* const handleEmail = (event) => {
-        setEmail(event.target.value);
+    const handleChange1 = (event) => {
+        setPregunta(event.target.value);
     }
-    const handlePassword = (event) => {
-        setPassword(event.target.value);
-    } */
+
+    const handleChange2 = (event) => {
+        setNivelAcademico(event.target.value);
+    }
 
     
+    //Valido campos y llamo endpoint
+    const signupUser = () => {
+        if (
+            (nombre !== "" && password !== "",
+            apellido !== "",
+            email !== "" && telefono !== "",
+            respuesta !== "",
+            nacimiento!=="")
+          ) {
+            validarSignup();
+          } else {
+            alert("Alguno de los campos esta vacio");
+          }
+    }
 
 
-    const opciones = [
-        { label: '¿Cual es tu comida favorita?' },
-        { label: '¿Cual es tu libro favorito?' },
-        { label: '¿Cual es el nombre de tu primer mascota?' }
-    ]
 
     //Ejecuto el endopoint para validar login
     const validarSignup = async function () {
@@ -87,7 +108,9 @@ function RegistroAlumno() {
             telefono: telefono,
             pregunta: pregunta,
             respuesta: respuesta,
-            nacimiento: nacimiento
+            nivelAcademico: nivelAcademico,
+            nacimiento: nacimiento,
+            perfil: false,
         }
         let getSignup = await signup(datos);
         if (getSignup.rdo === 0) {
@@ -98,27 +121,6 @@ function RegistroAlumno() {
         }
 
     }
-
-    //Valido campos y llamo endpoint
-    const signupUser = () => {
-        if (
-            (nombre !== "" && password !== "",
-            apellido !== "",
-            email !== "" && telefono !== "",
-            pregunta !== "" && respuesta !== "")
-          ) {
-            validarSignup();
-          } else {
-            alert("Alguno de los campos esta vacio");
-          }
-    }
-
-    /* const handleClick = () => {
-        signupUser();
-        if (usuarioValido) {
-            navigate("/");
-        }
-    } */
 
     const redirect = () => {
         if (usuarioValido) {
@@ -222,18 +224,22 @@ function RegistroAlumno() {
                         </Grid>
                         <Grid container spacing={2} sx={{ mt: 0.5, mb: 1 }}>
                             <Grid item xs={12} sm={6}>
-                                <Autocomplete
-                                    disablePortal
-                                    id="pregunta-seguridad"
-                                    options={opciones}
-                                    margin="normal"
-                                    autoComplete
+                            <TextField
                                     required
                                     fullWidth
-                                    renderInput={(params) => <TextField {...params} label="Pregunta de seguridad" />}
-                                    onChange={(e) => setPregunta(e.target.value)}
+                                    select
                                     value={pregunta}
-                                />
+                                    onChange={handleChange1}
+                                    id="pregunta"
+                                    name="pregunta"
+                                    type="Select"
+                                >
+                                    {opciones.map((option) => (
+                                        <MenuItem key={option.value} value={option.value} onChange={(e) => setPregunta(e.target.value)}>
+                                            {option.label}
+                                        </MenuItem>
+                                    ))}
+                                </TextField>
                             </Grid>
                             <Grid item xs={12} sm={6}>
                                 <TextField
@@ -256,13 +262,14 @@ function RegistroAlumno() {
                                     required
                                     fullWidth
                                     select
-                                    id="nivelacademico"
+                                    id="nivelAcademico"
+                                    name="nivelAcademico"
                                     type="Select"
-                                // value={nombrecurso}
-                                // onChange={(e) => setNombreCurso(e.target.value)}
+                                    onChange={handleChange2}
+                                    value={nivelAcademico}
                                 >
                                     {carreras.map((option) => (
-                                        <MenuItem key={option.value} value={option.value}>
+                                        <MenuItem key={option.value} value={option.value} onChange={(e) => setNivelAcademico(e.target.value)}>
                                             {option.label}
                                         </MenuItem>
                                     ))}
@@ -272,6 +279,7 @@ function RegistroAlumno() {
                         <Grid container sx={{ mt: 4 }} justifyContent={"center"}>
                             <TextField
                                 id="date"
+                                name="nacimiento"
                                 label="Fecha de Nacimiento"
                                 type="date"
                                 sx={{ width: 220 }}

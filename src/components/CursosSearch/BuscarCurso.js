@@ -1,19 +1,11 @@
 import * as React from 'react';
 import { useState } from 'react';
 import Paper from '@mui/material/Paper'
-import Stack from '@mui/material/Stack'
 import Button from '@mui/material/Button'
 import TextField from '@mui/material/TextField'
 import Grid from '@mui/material/Grid'
 import Typography from '@mui/material/Typography'
 import MenuItem from '@mui/material/MenuItem';
-import Card from '@mui/material/Card';
-import { Container, Divider } from '@mui/material';
-import Avatar from '@mui/material/Avatar';
-import CardHeader from '@mui/material/CardHeader';
-import StarIcon from '@mui/icons-material/Star';
-import StarBorderIcon from "@mui/icons-material/StarBorder";
-import LocationOnIcon from "@mui/icons-material/LocationOn";
 import CursosContainer from '../CursosContainer/CursosContainer';
 
 
