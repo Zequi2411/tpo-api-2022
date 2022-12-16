@@ -2,7 +2,7 @@ import urlWebServices from '../Controller/webServices.js';
 
 export const signup= async function(signup)
 {
-    let url = urlWebServices.signup;
+    let url = urlWebServices.signupprofesor;
     const formData = new URLSearchParams();
     formData.append('email', signup.email);
     formData.append('password', signup.password);
@@ -13,6 +13,7 @@ export const signup= async function(signup)
     formData.append('respuesta', signup.respuesta);
     formData.append('nivelAcademico', signup.nivelAcademico);
     formData.append('nacimiento', signup.nacimiento);
+    formData.append('perfil', signup.perfil);
     //console.log("dato",formData);
     console.log("url",url);
     try
@@ -33,6 +34,65 @@ export const signup= async function(signup)
         localStorage.setItem("nombre", signup.nombre);
         localStorage.setItem("apellido", signup.apellido);
         localStorage.setItem("telefono", signup.telefono);
+        let rdo = response.status;
+        let data = await response.json();
+        localStorage.setItem("id", data.user.id);
+        switch (rdo) {
+          case 200: {
+            localStorage.setItem("x", data.token);
+            //guardo usuario logueado
+            let user = data.user;
+            localStorage.setItem("email", user.email);
+            return { rdo: 0, mensaje: "Ok" }; //correcto
+          }
+          case 422: {
+            //error general
+            return { rdo: 1, mensaje: "El mail ingresado ya está en uso" };
+          }
+          default: {
+            //otro error
+            return { rdo: 1, mensaje: "Ha ocurrido un error" };
+          }
+        }
+      } catch (error) {
+        console.log("error", error);
+      }
+    };
+
+    export const signupprofesor= async function(signupprofesor)
+{
+    let url = urlWebServices.signup;
+    const formData = new URLSearchParams();
+    formData.append('email', signupprofesor.email);
+    formData.append('password', signupprofesor.password);
+    formData.append('nombre', signupprofesor.nombre);
+    formData.append('apellido', signupprofesor.apellido);
+    formData.append('telefono', signupprofesor.telefono);
+    formData.append('pregunta', signupprofesor.pregunta);
+    formData.append('respuesta', signupprofesor.respuesta);
+    formData.append('titulo', signupprofesor.titulo);
+    formData.append('experiencia', signupprofesor.experiencia);
+    formData.append('perfil', signupprofesor.perfil);
+    //console.log("dato",formData);
+    console.log("url",url);
+    try
+    {
+        let response = await fetch(url,{
+            method: 'POST', // or 'PUT'
+            mode: "cors",
+            headers:{
+                'Accept':'application/x-www-form-urlencoded',
+               // 'x-access-token': WebToken.webToken,
+                'Origin':'http://localhost:3000',
+                'Content-Type': 'application/x-www-form-urlencoded'},
+            body: formData,
+            
+        });
+
+        localStorage.setItem("email", signupprofesor.email);
+        localStorage.setItem("nombre", signupprofesor.nombre);
+        localStorage.setItem("apellido", signupprofesor.apellido);
+        localStorage.setItem("telefono", signupprofesor.telefono);
         let rdo = response.status;
         let data = await response.json();
         localStorage.setItem("id", data.user.id);

@@ -3,6 +3,7 @@ console.log("url",urlApi);
 
 const urlWebServices = {
     signup:urlApi + 'users/registration',
+    signupprofesor:urlApi + 'users/registrationprofesor',
     login:urlApi +"users/login",
     guardarImgUser: urlApi + "users/guardarImgUser",
     getImgUser: urlApi + "users/imgUserByMail",

@@ -9,7 +9,6 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { Grid } from '@mui/material';
-import Autocomplete from '@mui/material/Autocomplete';
 //import { useState } from 'react';
 import MenuItem from '@mui/material/MenuItem';
 import { signup } from '../Controller/miApp.controller';
@@ -80,12 +79,6 @@ function RegistroAlumno() {
     const handleChange2 = (event) => {
         setNivelAcademico(event.target.value);
     }
-    /* const handleEmail = (event) => {
-        setEmail(event.target.value);
-    }
-    const handlePassword = (event) => {
-        setPassword(event.target.value);
-    } */
 
     
     //Valido campos y llamo endpoint
@@ -117,6 +110,7 @@ function RegistroAlumno() {
             respuesta: respuesta,
             nivelAcademico: nivelAcademico,
             nacimiento: nacimiento,
+            perfil: false,
         }
         let getSignup = await signup(datos);
         if (getSignup.rdo === 0) {
