@@ -43,7 +43,7 @@ Los usuarios de tipo alumno podrán publicar un comentario con respecto a los cu
 Los usuarios de tipo alumno podrán publicar su valoración con respecto a los cursos en los cuales se inscribieron y fueron aceptados por el profesor.
 
 
-# Instalacion.
+# Instalación:
 
 ## Repositorios:
 
