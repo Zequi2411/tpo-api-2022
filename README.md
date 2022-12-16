@@ -28,7 +28,7 @@ El Frontend y el Backend se encuentran en 2 diferentes repositorios de GitHub
 
 ### Frontend:
 
-[Backend]
+[Backend] (https://github.com/Zequi2411/tpo-api-2022.git)
 
 ### Backend:
 
