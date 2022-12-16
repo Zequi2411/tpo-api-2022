@@ -156,53 +156,42 @@ function CrearCursos() {
   const manejarEnvioDeFormulario = async function () {
 
     // Codificar nuestro curso como JSON
-    let datos = {
-      nombre: nombrecurso,
-      materia: nombremateria,
-      //horaInicio: horaInicio,
-      //horaFin: horaFin,
-      tipo: tipoClase,
-      frecuencia: tipoFrecuencia,
-      //precio: precio,
-      calificacion: 0
-    }
+    const formData = new URLSearchParams();
+    formData.append("nombre", nombrecurso);
+    formData.append("materia", nombremateria);
+    formData.append("tipo", tipoClase);
+    formData.append("frecuencia", tipoFrecuencia);
 
-    const cargaUtil = JSON.stringify(datos);
-    console.log(cargaUtil)
-    // ¡Y enviarlo!
-    let response = await fetch('http://localhost:4000/cursos/agregarCurso', {
-      method: 'POST', // or 'PUT'
-      mode: "cors",
-      headers: {
-        'Accept': 'application/x-www-form-urlencoded',
-        // 'x-access-token': WebToken.webToken,
-        'Origin': 'http://localhost:3000',
-        'Content-Type': 'application/x-www-form-urlencoded'
-      },
-      body: cargaUtil,
+    console.log(formData);
 
-    });
+    try {
+      let response = await fetch('http://localhost:4000/cursos/agregarCurso', {
+        method: 'POST', // or 'PUT'
+        mode: "cors",
+        headers: {
+          'Accept': 'application/x-www-form-urlencoded',
+          // 'x-access-token': WebToken.webToken,
+          'Origin': 'http://localhost:3000',
+          'Content-Type': 'application/x-www-form-urlencoded'
+        },
+        body: formData,
 
-    let rdo = response.status;
-    console.log("response", response);
-    let data = await response.json();
-    console.log("jsonresponse", data);
-
-    //const exitoso = await respuesta.json();
-    if (rdo) {
-      toast('Curso guardado exitosamente', {
-        position: "top-left",
-        autoClose: 2000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
       });
-    } else {
-      toast.error("Error guardando. Intenta de nuevo");
+
+      let rdo = response.status;
+      switch (rdo) {
+        case 200: {
+          return { rdo: 0, mensaje: "El curso se cargo con exito" }; //correcto
+        }
+        default: {
+          //otro error
+          return { rdo: 1, mensaje: "Ha ocurrido un error" };
+        }
+      }
+    } catch (error) {
+      console.log("error", error);
     }
-  }
+  };
 
   return (
     <ThemeProvider theme={theme}>
